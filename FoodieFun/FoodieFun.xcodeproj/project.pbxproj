@@ -8,14 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		1C40090F23C3A72000E2CF31 /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */; };
-		1C40091123C3A74D00E2CF31 /* TabBarAndTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091023C3A74D00E2CF31 /* TabBarAndTableViewController.swift */; };
-		1C40091423C3A7A800E2CF31 /* RestaurantCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091323C3A7A800E2CF31 /* RestaurantCustomTableViewCell.swift */; };
+		1C40091423C3A7A800E2CF31 /* RestaurantListCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091323C3A7A800E2CF31 /* RestaurantListCustomTableViewCell.swift */; };
 		1C40091623C3B5D900E2CF31 /* AddRestaurantItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */; };
 		1C40091823C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091723C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift */; };
 		1C40091A23C3B67200E2CF31 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091923C3B67200E2CF31 /* RestaurantDetailViewController.swift */; };
 		1C40091E23C3B75C00E2CF31 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091D23C3B75C00E2CF31 /* LoginViewController.swift */; };
 		1C40092023C3B84500E2CF31 /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40091F23C3B84500E2CF31 /* UserInformationViewController.swift */; };
 		1C40092223C3B85400E2CF31 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092123C3B85400E2CF31 /* MapKitViewController.swift */; };
+		1C40092423C3E95500E2CF31 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092323C3E95500E2CF31 /* TabBarViewController.swift */; };
+		1C40092623C3E98E00E2CF31 /* RestaurantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092523C3E98E00E2CF31 /* RestaurantListTableViewController.swift */; };
+		1C40092823C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092723C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift */; };
+		1C40092A23C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092923C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift */; };
+		1C40092C23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */; };
+		1C40092E23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40092D23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift */; };
 		1C8026F223BBDFC70045CBA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8026F123BBDFC70045CBA2 /* AppDelegate.swift */; };
 		1C8026F423BBDFC70045CBA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8026F323BBDFC70045CBA2 /* SceneDelegate.swift */; };
 		1C8026F923BBDFC70045CBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8026F723BBDFC70045CBA2 /* Main.storyboard */; };
@@ -25,14 +30,19 @@
 
 /* Begin PBXFileReference section */
 		1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
-		1C40091023C3A74D00E2CF31 /* TabBarAndTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarAndTableViewController.swift; sourceTree = "<group>"; };
-		1C40091323C3A7A800E2CF31 /* RestaurantCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCustomTableViewCell.swift; sourceTree = "<group>"; };
+		1C40091323C3A7A800E2CF31 /* RestaurantListCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListCustomTableViewCell.swift; sourceTree = "<group>"; };
 		1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantItemViewController.swift; sourceTree = "<group>"; };
 		1C40091723C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantItemDetailViewController.swift; sourceTree = "<group>"; };
 		1C40091923C3B67200E2CF31 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		1C40091D23C3B75C00E2CF31 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C40091F23C3B84500E2CF31 /* UserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		1C40092123C3B85400E2CF31 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
+		1C40092323C3E95500E2CF31 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		1C40092523C3E98E00E2CF31 /* RestaurantListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListTableViewController.swift; sourceTree = "<group>"; };
+		1C40092723C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTableViewController.swift; sourceTree = "<group>"; };
+		1C40092923C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddARestaurantReviewViewController.swift; sourceTree = "<group>"; };
+		1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewTabBarViewController.swift; sourceTree = "<group>"; };
+		1C40092D23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuItemCollectionViewController.swift; sourceTree = "<group>"; };
 		1C8026EE23BBDFC70045CBA2 /* FoodieFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodieFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8026F123BBDFC70045CBA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C8026F323BBDFC70045CBA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,9 +67,14 @@
 			isa = PBXGroup;
 			children = (
 				1C40091D23C3B75C00E2CF31 /* LoginViewController.swift */,
-				1C40091023C3A74D00E2CF31 /* TabBarAndTableViewController.swift */,
+				1C40092323C3E95500E2CF31 /* TabBarViewController.swift */,
+				1C40092523C3E98E00E2CF31 /* RestaurantListTableViewController.swift */,
 				1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */,
+				1C40092723C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift */,
+				1C40092923C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift */,
+				1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */,
 				1C40091923C3B67200E2CF31 /* RestaurantDetailViewController.swift */,
+				1C40092D23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift */,
 				1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */,
 				1C40091723C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift */,
 				1C40091F23C3B84500E2CF31 /* UserInformationViewController.swift */,
@@ -71,7 +86,7 @@
 		1C40091B23C3B68A00E2CF31 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
-				1C40091323C3A7A800E2CF31 /* RestaurantCustomTableViewCell.swift */,
+				1C40091323C3A7A800E2CF31 /* RestaurantListCustomTableViewCell.swift */,
 			);
 			path = CustomCells;
 			sourceTree = "<group>";
@@ -187,16 +202,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C40091E23C3B75C00E2CF31 /* LoginViewController.swift in Sources */,
+				1C40092C23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift in Sources */,
 				1C40091623C3B5D900E2CF31 /* AddRestaurantItemViewController.swift in Sources */,
+				1C40092E23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift in Sources */,
+				1C40092423C3E95500E2CF31 /* TabBarViewController.swift in Sources */,
+				1C40092A23C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift in Sources */,
 				1C40091823C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift in Sources */,
 				1C40091A23C3B67200E2CF31 /* RestaurantDetailViewController.swift in Sources */,
 				1C40092223C3B85400E2CF31 /* MapKitViewController.swift in Sources */,
 				1C40092023C3B84500E2CF31 /* UserInformationViewController.swift in Sources */,
 				1C8026F223BBDFC70045CBA2 /* AppDelegate.swift in Sources */,
+				1C40092823C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift in Sources */,
 				1C8026F423BBDFC70045CBA2 /* SceneDelegate.swift in Sources */,
-				1C40091423C3A7A800E2CF31 /* RestaurantCustomTableViewCell.swift in Sources */,
+				1C40091423C3A7A800E2CF31 /* RestaurantListCustomTableViewCell.swift in Sources */,
+				1C40092623C3E98E00E2CF31 /* RestaurantListTableViewController.swift in Sources */,
 				1C40090F23C3A72000E2CF31 /* AddRestaurantViewController.swift in Sources */,
-				1C40091123C3A74D00E2CF31 /* TabBarAndTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

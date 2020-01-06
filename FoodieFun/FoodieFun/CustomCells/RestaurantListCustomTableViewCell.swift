@@ -1,5 +1,5 @@
 //
-//  RestaurantCustomTableViewCell.swift
+//  RestaurantListCustomTableViewCell.swift
 //  FoodieFun
 //
 //  Created by Jerry haaser on 1/6/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantCustomTableViewCell: UITableViewCell {
+class RestaurantListCustomTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
