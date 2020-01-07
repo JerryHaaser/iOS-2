@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var toggleSignUpSignInSwitch: UISwitch!
+    @IBOutlet weak var switchSignUpSignInLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -27,11 +29,40 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func signUpButtonePressed(_ sender: UIButton) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
     
-    @IBAction func signUpSignInSegmentedControl(_ sender: UISegmentedControl) {
+    private func updateViews() {
+        
+        if toggleSignUpSignInSwitch.isOn == true {
+            emailAddressLabel.isHidden = false
+            emailAddressTextField.isHidden = false
+            cityLabel.isHidden = false
+            cityTextField.isHidden = false
+            stateLabel.isHidden = false
+            stateTextField.isHidden = false
+            signUpButton.titleLabel?.text = "Sing Up"
+            switchSignUpSignInLabel.text = "Switch to Sign In"
+        } else {
+            emailAddressLabel.isHidden = true
+            emailAddressTextField.isHidden = true
+            cityLabel.isHidden = true
+            cityTextField.isHidden = true
+            stateLabel.isHidden = true
+            stateTextField.isHidden = true
+            signUpButton.titleLabel?.text = "Sing In"
+            switchSignUpSignInLabel.text = "Switch to Sign Up"
+        }
+        
     }
+    
+    @IBAction func signUpButtonePressed(_ sender: UIButton) {
+        
+    }
+
+    
     
 
     /*
