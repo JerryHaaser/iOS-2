@@ -9,7 +9,7 @@
 import Foundation
 
 struct UserRepresentation: Codable {
-    let id: Int
+    let id: UUID
     let username: String
     let email: String
     let password: String
