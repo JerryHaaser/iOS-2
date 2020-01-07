@@ -10,10 +10,27 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var userNameTextField: UITextField!
+    @IBOutlet weak var emailAddressLabel: UILabel!
+    @IBOutlet weak var emailAddressTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var stateLabel: UILabel!
+    @IBOutlet weak var stateTextField: UITextField!
+    @IBOutlet weak var signUpButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func signUpButtonePressed(_ sender: UIButton) {
+    }
+    
+    @IBAction func signUpSignInSegmentedControl(_ sender: UISegmentedControl) {
     }
     
 
