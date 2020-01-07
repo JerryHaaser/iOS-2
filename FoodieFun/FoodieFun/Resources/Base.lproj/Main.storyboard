@@ -99,6 +99,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="restaurantListImageView" destination="dR0-Kb-QCt" id="KDr-TS-bYO"/>
+                                    <outlet property="restaurantListRatingLabel" destination="Yur-kg-YFe" id="OLv-Ld-aQL"/>
+                                    <outlet property="restaurantListRestaurantNameLabel" destination="g7W-fK-6LD" id="hTF-d6-RdW"/>
                                     <segue destination="414-Ee-KyU" kind="show" identifier="RestaurantReviewTableViewShowSegue" id="98a-qY-MI1"/>
                                 </connections>
                             </tableViewCell>
@@ -111,6 +114,7 @@
                     <navigationItem key="navigationItem" id="ke3-fS-klh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="J6e-2H-yhS">
                             <connections>
+                                <action selector="restaurantListAddButton:" destination="lVU-FM-EUF" id="lMl-fa-cyM"/>
                                 <segue destination="2R3-M2-I94" kind="show" identifier="AddRestaurantShowSegue" id="dMQ-ce-PkG"/>
                             </connections>
                         </barButtonItem>
@@ -132,27 +136,27 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Q0-2x-BXa">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Q0-2x-BXa" customClass="RestaurantReviewCustomTableViewCell" customModule="FoodieFun" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Q0-2x-BXa" id="9LL-Ss-70n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="db7-rE-Ac9">
-                                                    <rect key="frame" x="345" y="11.5" width="49" height="21"/>
+                                                    <rect key="frame" x="345" y="11.5" width="49" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eey-4I-fmq">
-                                                    <rect key="frame" x="20" y="11.5" width="92" height="21"/>
+                                                    <rect key="frame" x="20" y="12" width="92" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccg-8R-pIr">
-                                                    <rect key="frame" x="301" y="11.5" width="36" height="21"/>
+                                                    <rect key="frame" x="301" y="11.5" width="36" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -170,6 +174,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="restaurantReviewCellDateLabel" destination="ccg-8R-pIr" id="sFF-eD-5Wx"/>
+                                            <outlet property="restaurantReviewCellRatingLabel" destination="db7-rE-Ac9" id="2KP-Zh-YVI"/>
+                                            <outlet property="restaurantReviewCellReviewTitleLabel" destination="eey-4I-fmq" id="DaV-qd-w8d"/>
                                             <segue destination="UJe-LZ-Sg1" kind="show" id="yIt-7a-ISF"/>
                                         </connections>
                                     </tableViewCell>
@@ -188,6 +195,7 @@
                     <navigationItem key="navigationItem" title="Reviews of Restaurant" id="Lgl-HU-ygS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Dp-em-wNW">
                             <connections>
+                                <action selector="restaurantReviewTableViewAddButton:" destination="414-Ee-KyU" id="AKw-Ip-4GJ"/>
                                 <segue destination="vdq-c5-TWF" kind="show" identifier="AddRestaurantReviewShowSegue" id="0iF-c0-YQb"/>
                             </connections>
                         </barButtonItem>
@@ -329,6 +337,13 @@
                     <navigationItem key="navigationItem" title="Add a Review" id="hzd-Ti-z01">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Olt-tn-wmB"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addARestaurantRatingTextField" destination="KSB-Ag-zRp" id="S8J-tn-KiN"/>
+                        <outlet property="addARestaurantReviewReviewTextView" destination="lsc-F1-uBs" id="Q7Y-iI-EoT"/>
+                        <outlet property="addARestaurantReviewServiceTextView" destination="r2S-R5-gWO" id="Ffk-i2-Koa"/>
+                        <outlet property="addARestaurantReviewTimeToSeatingTextField" destination="16Q-vO-jP0" id="DIA-YE-mk4"/>
+                        <outlet property="addARestaurantReviewTitleTextField" destination="qhY-EM-vhM" id="06H-eZ-dGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2O-yS-IpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -442,8 +457,18 @@
                         <viewLayoutGuide key="safeArea" id="U9I-5v-N55"/>
                     </view>
                     <navigationItem key="navigationItem" title="Review Title" id="DSN-N2-58E">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9Ej-fH-YJz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="9Ej-fH-YJz">
+                            <connections>
+                                <action selector="restaurantDetailVCEditButton:" destination="mnc-tt-Xnc" id="y9n-KR-HGf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="restaurantDetailVCRatingLabel" destination="oen-QB-bdd" id="yfj-Wm-TSO"/>
+                        <outlet property="restaurantDetailVCReviewTextView" destination="gQC-05-z9A" id="RnC-1J-tzC"/>
+                        <outlet property="restaurantDetailVCServiceReviewTextView" destination="cyC-hJ-z3P" id="imr-mr-L9r"/>
+                        <outlet property="restaurantDetailVCTimeInMinutesLabel" destination="oen-QB-bdd" id="5IH-rc-WSN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7T-5g-vKU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -482,7 +507,7 @@
                                     <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dPn-2Q-l6b">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dPn-2Q-l6b" customClass="MenuItemCustomCollectionViewCell" customModule="FoodieFun" customModuleProvider="target">
                                         <rect key="frame" x="15" y="15" width="150" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iQ5-oi-JV1">
@@ -528,6 +553,10 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="200"/>
                                         <connections>
+                                            <outlet property="menuItemCellDateLabel" destination="1Yb-aF-wvr" id="1P5-Ca-4Fu"/>
+                                            <outlet property="menuItemCellImageView" destination="1sl-L4-aRn" id="Tvg-Ks-ag0"/>
+                                            <outlet property="menuItemCellRatingLabel" destination="Ism-AR-wmN" id="1FJ-Fo-B1h"/>
+                                            <outlet property="menuItemCellRestaurantItemNameLabel" destination="jfo-vH-Ubs" id="iGc-d8-Fha"/>
                                             <segue destination="mjD-Ri-oZv" kind="show" identifier="RestaurantItemDetailViewShowSegue" id="tAq-NM-6sz"/>
                                         </connections>
                                     </collectionViewCell>
@@ -546,6 +575,7 @@
                     <navigationItem key="navigationItem" title="Menu Item Review" id="152-8r-GoD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KLv-Rj-qw9">
                             <connections>
+                                <action selector="restaurantMenuItemCollectionVCAddButton:" destination="mJc-te-rZI" id="rqH-cb-OPZ"/>
                                 <segue destination="jGC-cK-TdV" kind="show" identifier="AddRestaurantItemViewControllerShowSegue" id="LQG-8n-yCC"/>
                             </connections>
                         </barButtonItem>
@@ -641,6 +671,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRh-eP-p0d">
                                 <rect key="frame" x="154" y="732" width="106" height="30"/>
                                 <state key="normal" title="Upload a Photo"/>
+                                <connections>
+                                    <action selector="addRestaurantMenuItemUploadPhotoButton:" destination="jGC-cK-TdV" eventType="touchUpInside" id="JjE-XZ-tQl"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -677,8 +710,19 @@
                         <viewLayoutGuide key="safeArea" id="6yZ-3f-q2C"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a New Item Review" id="75N-M9-LUC">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tpb-ug-Qo8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tpb-ug-Qo8">
+                            <connections>
+                                <action selector="addRestaurantMenuItemSaveButton:" destination="jGC-cK-TdV" id="HuA-mt-8RC"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addRestaurantItemMenuItemNameTextField" destination="CeI-IE-r5y" id="C3i-MV-F3A"/>
+                        <outlet property="addRestaurantMenuItemImageView" destination="zwt-AJ-GY9" id="fgJ-l2-Yb1"/>
+                        <outlet property="addRestaurantMenuItemPriceTextField" destination="2Hg-FR-bhU" id="2g1-DO-Fcw"/>
+                        <outlet property="addRestaurantMenuItemRatingTextField" destination="Liy-PD-DCg" id="77u-Uy-645"/>
+                        <outlet property="addRestaurantMenuItemReviewTextView" destination="vVo-Zc-33u" id="SIG-mH-8S6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hlj-aL-HEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -697,7 +741,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUt-uU-Ya7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2430" y="-688"/>
+            <point key="canvasLocation" x="-2430" y="-506"/>
         </scene>
         <!--Add a New Restaurant-->
         <scene sceneID="hjk-mY-6sV">
@@ -720,6 +764,9 @@
                                         <rect key="frame" x="0.0" y="32" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addRestaurantNameTextField:" destination="spc-fx-fnp" eventType="editingDidEnd" id="bmy-Vr-ShB"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -745,6 +792,9 @@
                                         <rect key="frame" x="0.0" y="32" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addRestaurantCuisineTextField:" destination="spc-fx-fnp" eventType="editingDidEnd" id="5Ik-gk-8SR"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -770,6 +820,9 @@
                                         <rect key="frame" x="0.0" y="32" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addRestaurantStreetAddressTextField:" destination="spc-fx-fnp" eventType="editingDidEnd" id="rxH-ua-LVs"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -795,6 +848,9 @@
                                         <rect key="frame" x="0.0" y="32" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addRestaurantCityTextField:" destination="spc-fx-fnp" eventType="editingDidEnd" id="j3L-wG-MNe"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -820,6 +876,9 @@
                                         <rect key="frame" x="0.0" y="32" width="374" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="addRestaurantStateTextField:" destination="spc-fx-fnp" eventType="editingDidEnd" id="tDM-2K-pZ6"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -855,6 +914,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQp-Um-bAg">
                                 <rect key="frame" x="154" y="738" width="106" height="30"/>
                                 <state key="normal" title="Upload a Photo"/>
+                                <connections>
+                                    <action selector="addRestaurantUploadAPhotoButtonPressed:" destination="2R3-M2-I94" eventType="touchUpInside" id="sLE-TV-Oke"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -882,10 +944,23 @@
                         <viewLayoutGuide key="safeArea" id="hji-0S-xhW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a New Restaurant" id="Cxb-LC-nbp">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9lu-eh-47N"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9lu-eh-47N">
+                            <connections>
+                                <action selector="addRestaurantSaveButtonPressed:" destination="2R3-M2-I94" id="BR0-hY-EUa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addRestaurantCityTextField" destination="jB8-XN-2mQ" id="NBZ-bm-Wxe"/>
+                        <outlet property="addRestaurantCuisineTextField" destination="ghr-Gg-HeN" id="RY2-P2-wu3"/>
+                        <outlet property="addRestaurantImageView" destination="IxO-MO-md5" id="BH1-uu-Dhb"/>
+                        <outlet property="addRestaurantNameTextField" destination="ghr-Gg-HeN" id="tbJ-KN-pPP"/>
+                        <outlet property="addRestaurantStateTextField" destination="09x-jU-28z" id="eW6-L8-1gs"/>
+                        <outlet property="addRestaurantStreetAddressTextField" destination="jB8-XN-2mQ" id="Nyg-V9-EUV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcp-FQ-LZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="spc-fx-fnp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-559" y="1081"/>
         </scene>
@@ -972,8 +1047,19 @@
                         <viewLayoutGuide key="safeArea" id="MWU-1w-RNB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Item Name" id="cRu-1N-DDt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="HEo-Et-QxM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="HEo-Et-QxM">
+                            <connections>
+                                <action selector="restaurantItemDetailVCEditButton:" destination="mjD-Ri-oZv" id="iAO-cU-Meu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="restaurantItemDetailVCImageView" destination="Xfg-a7-6Is" id="cmJ-Bu-NCn"/>
+                        <outlet property="restaurantItemDetailVCPriceLabel" destination="UU7-Tq-65Q" id="Mlq-f0-jD9"/>
+                        <outlet property="restaurantItemDetailVCRatingLabel" destination="QPc-5j-cWh" id="cDn-pp-Kq8"/>
+                        <outlet property="restaurantItemRestaurantDetailVCNameLabel" destination="9vs-gE-waZ" id="61X-rK-EO2"/>
+                        <outlet property="restaurantItemReviewDetailVCTextView" destination="pgZ-X0-6sh" id="7Cv-wO-vGm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jpm-OS-a4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

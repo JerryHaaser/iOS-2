@@ -23,6 +23,10 @@ class RestaurantMenuItemCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func restaurantMenuItemCollectionVCAddButton(_ sender: UIBarButtonItem) {
+    }
+    
 
     /*
     // MARK: - Navigation

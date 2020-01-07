@@ -9,12 +9,26 @@
 import UIKit
 
 class AddRestaurantItemViewController: UIViewController {
-
+  
+    @IBOutlet weak var addRestaurantItemMenuItemNameTextField: UITextField!
+    
+    @IBOutlet weak var addRestaurantMenuItemPriceTextField: UITextField!
+    @IBOutlet weak var addRestaurantMenuItemReviewTextView: UITextView!
+    @IBOutlet weak var addRestaurantMenuItemRatingTextField: UITextField!
+    
+    @IBOutlet weak var addRestaurantMenuItemImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func addRestaurantMenuItemSaveButton(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func addRestaurantMenuItemUploadPhotoButton(_ sender: UIButton) {
+    }
+    
     
 
     /*

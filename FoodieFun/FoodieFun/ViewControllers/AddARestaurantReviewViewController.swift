@@ -9,7 +9,15 @@
 import UIKit
 
 class AddARestaurantReviewViewController: UIViewController {
-
+    
+    @IBOutlet weak var addARestaurantReviewTitleTextField: UITextField!
+    
+    @IBOutlet weak var addARestaurantReviewReviewTextView: UITextView!
+    @IBOutlet weak var addARestaurantReviewServiceTextView: UITextView!
+    @IBOutlet weak var addARestaurantReviewTimeToSeatingTextField: UITextField!
+    
+    @IBOutlet weak var addARestaurantRatingTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

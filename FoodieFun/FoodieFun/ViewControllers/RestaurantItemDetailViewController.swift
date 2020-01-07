@@ -9,12 +9,23 @@
 import UIKit
 
 class RestaurantItemDetailViewController: UIViewController {
-
+    
+    @IBOutlet weak var restaurantItemRestaurantDetailVCNameLabel: UILabel!
+    @IBOutlet weak var restaurantItemReviewDetailVCTextView: UITextView!
+    @IBOutlet weak var restaurantItemDetailVCPriceLabel: UILabel!
+    @IBOutlet weak var restaurantItemDetailVCRatingLabel: UILabel!
+    @IBOutlet weak var restaurantItemDetailVCImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func restaurantItemDetailVCEditButton(_ sender: UIBarButtonItem) {
+    }
+    
     
 
     /*

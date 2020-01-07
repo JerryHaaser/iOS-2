@@ -9,6 +9,14 @@
 import UIKit
 
 class AddRestaurantViewController: UIViewController {
+    
+    @IBOutlet weak var addRestaurantNameTextField: UITextField!
+    @IBOutlet weak var addRestaurantCuisineTextField: UITextField!
+    @IBOutlet weak var addRestaurantStreetAddressTextField: UITextField!
+    @IBOutlet weak var addRestaurantCityTextField: UITextField!
+    @IBOutlet weak var addRestaurantStateTextField: UITextField!
+    @IBOutlet weak var addRestaurantImageView: UIImageView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +24,12 @@ class AddRestaurantViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addRestaurantSaveButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func addRestaurantUploadAPhotoButtonPressed(_ sender: UIButton) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 
