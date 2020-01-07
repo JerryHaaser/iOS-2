@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct RestaurantPhoto: Codable {
+    let id: Int
+    let restaurantId: RestaurantId
+    let photo: Vachar
+}
+
+struct Vachar: Codable {
+    
+}
