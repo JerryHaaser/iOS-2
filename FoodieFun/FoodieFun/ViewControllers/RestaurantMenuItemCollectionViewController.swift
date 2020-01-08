@@ -11,6 +11,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class RestaurantMenuItemCollectionViewController: UICollectionViewController {
+    
+    var restaurantsController: RestaurantController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

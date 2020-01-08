@@ -15,6 +15,8 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var restaurantDetailVCTimeInMinutesLabel: UILabel!
     @IBOutlet weak var restaurantDetailVCRatingLabel: UILabel!
     
+    var restaurantsController: RestaurantController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
