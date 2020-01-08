@@ -38,6 +38,7 @@
 		1C8026F923BBDFC70045CBA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8026F723BBDFC70045CBA2 /* Main.storyboard */; };
 		1C8026FB23BBDFC90045CBA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C8026FA23BBDFC90045CBA2 /* Assets.xcassets */; };
 		1C8026FE23BBDFC90045CBA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C8026FC23BBDFC90045CBA2 /* LaunchScreen.storyboard */; };
+		1CF4805623C66217004DB7A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4805523C66217004DB7A1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		1C8026FA23BBDFC90045CBA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C8026FD23BBDFC90045CBA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C8026FF23BBDFC90045CBA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF4805523C66217004DB7A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				1C40094223C41EFD00E2CF31 /* MenuItemPhoto.swift */,
 				1C40094623C4EA7000E2CF31 /* Bearer.swift */,
 				1C40094823C4EB5800E2CF31 /* LoginResponse.swift */,
+				1CF4805523C66217004DB7A1 /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				1C40092623C3E98E00E2CF31 /* RestaurantListTableViewController.swift in Sources */,
 				1C40090F23C3A72000E2CF31 /* AddRestaurantViewController.swift in Sources */,
 				1C40093923C41E8C00E2CF31 /* User.swift in Sources */,
+				1CF4805623C66217004DB7A1 /* CoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
