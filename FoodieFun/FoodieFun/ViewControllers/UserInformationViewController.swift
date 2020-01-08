@@ -9,6 +9,8 @@
 import UIKit
 
 class UserInformationViewController: UIViewController {
+    
+    var restaurantsController: RestaurantController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

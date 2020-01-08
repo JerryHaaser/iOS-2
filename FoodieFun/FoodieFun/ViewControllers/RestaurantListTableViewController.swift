@@ -8,7 +8,15 @@
 
 import UIKit
 
+protocol RestaurantListTableViewControllerDelegate {
+
+}
+
 class RestaurantListTableViewController: UITableViewController {
+    
+    var restaurantsController: RestaurantController!
+    
+    var delegate: RestaurantListTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

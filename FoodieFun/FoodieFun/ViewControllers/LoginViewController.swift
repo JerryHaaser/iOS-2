@@ -21,6 +21,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signUpSignInSegmentedControl: UISegmentedControl!
     
+    var restaurantsController: RestaurantController!
+    
+    var onComplete: [( () -> Void )] = []
+    
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
@@ -51,7 +55,7 @@ class LoginViewController: UIViewController {
             cityTextField.isHidden = false
             stateLabel.isHidden = false
             stateTextField.isHidden = false
-            signUpButton.titleLabel?.text = "Sing Up"
+            signUpButton.titleLabel?.text = "Sign Up"
         case 1:
             emailAddressLabel.isHidden = true
             emailAddressTextField.isHidden = true
@@ -59,7 +63,7 @@ class LoginViewController: UIViewController {
             cityTextField.isHidden = true
             stateLabel.isHidden = true
             stateTextField.isHidden = true
-            signUpButton.titleLabel?.text = "Sing In"
+            signUpButton.titleLabel?.text = "Sign In"
         default:
             break;
         }

@@ -9,6 +9,8 @@
 import UIKit
 
 class MapKitViewController: UIViewController {
+    
+    var restaurantsController: RestaurantController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
