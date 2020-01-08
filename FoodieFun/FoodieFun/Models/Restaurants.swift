@@ -11,11 +11,12 @@ import Foundation
 struct Restaurants: Codable {
     let id: Int
     let userId: UserId
-    let name: String
+    let restaurantName: RestaurantName
     let cuisine: String
     let streetAddress: StreetAddress
     let city: String
     let state: String
+    let zip: Int
 }
 
 struct UserId: Codable {
@@ -23,6 +24,14 @@ struct UserId: Codable {
     
     enum CodingKeys: String, CodingKey {
         case userId = "user_id"
+    }
+}
+
+struct RestaurantName: Codable {
+    let restaurantName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case restaurantName = "restaurant_name"
     }
 }
 

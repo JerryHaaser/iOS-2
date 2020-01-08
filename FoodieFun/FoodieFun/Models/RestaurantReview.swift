@@ -12,10 +12,8 @@ struct RestaurantReview {
     let id: Int
     let restaurantId: RestaurantId
     let visitDate: VisitDate
-    let review: String
-    let serviceExperience: ServiceExperience
-    let timeToSeating: TimeToSeating
-    let rating: Decimal
+    let review: Review
+    let restaurantRating: RestaurantRating
 }
 
 struct RestaurantId: Codable {
@@ -23,6 +21,14 @@ struct RestaurantId: Codable {
     
     enum CodingKeys: String, CodingKey {
         case restaurantId = "restaurant_id"
+    }
+}
+
+struct Review: Codable {
+    let review: String
+    
+    enum CodingKeys: String, CodingKey {
+        case review = "restaurant_review"
     }
 }
 
@@ -34,18 +40,13 @@ struct VisitDate: Codable {
     }
 }
 
-struct ServiceExperience: Codable {
-    let serviceExperience: String
+struct RestaurantRating: Codable {
+    let restaurantRating: Decimal
     
     enum CodingKeys: String, CodingKey {
-        case serviceExperience = "service_experience"
+        case restaurantRating = "restaurant_rating"
     }
 }
 
-struct TimeToSeating: Codable {
-    let timeToSeating: Date
-    
-    enum CodingKeys: String, CodingKey {
-        case timeToSeating = "time_to_seating"
-    }
-}
+
+
