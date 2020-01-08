@@ -125,7 +125,6 @@
 				1C8026F323BBDFC70045CBA2 /* SceneDelegate.swift */,
 				1C8026FA23BBDFC90045CBA2 /* Assets.xcassets */,
 				1C8026FC23BBDFC90045CBA2 /* LaunchScreen.storyboard */,
-				1C8026FF23BBDFC90045CBA2 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -173,6 +172,7 @@
 		1C8026F023BBDFC70045CBA2 /* FoodieFun */ = {
 			isa = PBXGroup;
 			children = (
+				1C8026FF23BBDFC90045CBA2 /* Info.plist */,
 				1C40091223C3A76200E2CF31 /* ViewControllers */,
 				1C40091B23C3B68A00E2CF31 /* CustomCells */,
 				1C40093723C41E6A00E2CF31 /* Models */,

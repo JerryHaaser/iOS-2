@@ -19,24 +19,32 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var stateLabel: UILabel!
     @IBOutlet weak var stateTextField: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var toggleSignUpSignInSwitch: UISwitch!
-    @IBOutlet weak var switchSignUpSignInLabel: UILabel!
+    @IBOutlet weak var signUpSignInSegmentedControl: UISegmentedControl!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        // Do any additional setup after loading the view.
+//    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        updateViews()
     }
     
     private func updateViews() {
+
         
-        if toggleSignUpSignInSwitch.isOn == true {
+    }
+    
+    @IBAction func signUpButtonePressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func signUpSignInSegmentedControlTouched(_ sender: UISegmentedControl) {
+        switch signUpSignInSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
             emailAddressLabel.isHidden = false
             emailAddressTextField.isHidden = false
             cityLabel.isHidden = false
@@ -44,8 +52,7 @@ class LoginViewController: UIViewController {
             stateLabel.isHidden = false
             stateTextField.isHidden = false
             signUpButton.titleLabel?.text = "Sing Up"
-            switchSignUpSignInLabel.text = "Switch to Sign In"
-        } else {
+        case 1:
             emailAddressLabel.isHidden = true
             emailAddressTextField.isHidden = true
             cityLabel.isHidden = true
@@ -53,15 +60,10 @@ class LoginViewController: UIViewController {
             stateLabel.isHidden = true
             stateTextField.isHidden = true
             signUpButton.titleLabel?.text = "Sing In"
-            switchSignUpSignInLabel.text = "Switch to Sign Up"
+        default:
+            break;
         }
-        
     }
-    
-    @IBAction func signUpButtonePressed(_ sender: UIButton) {
-        
-    }
-
     
     
 
@@ -76,3 +78,4 @@ class LoginViewController: UIViewController {
     */
 
 }
+

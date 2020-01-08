@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kcr-1b-jBH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mUR-vO-8dl">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -805,18 +805,16 @@
                                     <action selector="signUpButtonePressed:" destination="mUR-vO-8dl" eventType="touchUpInside" id="XCe-uT-itY"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KLf-El-4d6">
-                                <rect key="frame" x="182.5" y="608" width="51" height="31"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uv2-Ig-YPf">
+                                <rect key="frame" x="139.5" y="608" width="135" height="32"/>
+                                <segments>
+                                    <segment title="Sign Up"/>
+                                    <segment title="Sign In"/>
+                                </segments>
                                 <connections>
-                                    <action selector="toggleSignUpSignInSwitch:" destination="mUR-vO-8dl" eventType="valueChanged" id="goO-gR-ZgD"/>
+                                    <action selector="signUpSignInSegmentedControlTouched:" destination="mUR-vO-8dl" eventType="valueChanged" id="aCA-aa-Cp6"/>
                                 </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch to Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28X-iQ-5I4">
-                                <rect key="frame" x="143.5" y="647" width="127.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -828,7 +826,6 @@
                             <constraint firstItem="8Si-ba-ilZ" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="984-YF-JWU"/>
                             <constraint firstItem="yJD-6B-p9V" firstAttribute="trailing" secondItem="3u0-Vk-6c1" secondAttribute="trailing" constant="20" id="Ev6-jk-QsE"/>
                             <constraint firstItem="pfQ-cz-Yv1" firstAttribute="leading" secondItem="yJD-6B-p9V" secondAttribute="leading" constant="20" id="FpY-gQ-Snc"/>
-                            <constraint firstItem="KLf-El-4d6" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="GS5-mV-VGH"/>
                             <constraint firstItem="EM2-Fx-VvH" firstAttribute="leading" secondItem="yJD-6B-p9V" secondAttribute="leading" constant="20" id="HN8-rq-Wju"/>
                             <constraint firstItem="yJD-6B-p9V" firstAttribute="trailing" secondItem="EM2-Fx-VvH" secondAttribute="trailing" constant="20" id="IZm-ic-Eti"/>
                             <constraint firstItem="pfQ-cz-Yv1" firstAttribute="top" secondItem="syL-FL-p4P" secondAttribute="bottom" constant="8" id="JAS-1B-gge"/>
@@ -849,13 +846,12 @@
                             <constraint firstItem="Xnt-Cf-I6o" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="b7I-Wp-Ovb"/>
                             <constraint firstItem="3u0-Vk-6c1" firstAttribute="leading" secondItem="yJD-6B-p9V" secondAttribute="leading" constant="20" id="cKx-e5-Qi2"/>
                             <constraint firstItem="8Si-ba-ilZ" firstAttribute="top" secondItem="yJD-6B-p9V" secondAttribute="top" constant="20" id="enu-UJ-Hc5"/>
-                            <constraint firstItem="KLf-El-4d6" firstAttribute="top" secondItem="Ten-rm-gjz" secondAttribute="bottom" constant="8" id="gtC-f2-Lp0"/>
+                            <constraint firstItem="uv2-Ig-YPf" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="fqe-Y3-PfC"/>
                             <constraint firstItem="3u0-Vk-6c1" firstAttribute="top" secondItem="Xnt-Cf-I6o" secondAttribute="bottom" constant="8" id="tt7-JX-Mct"/>
+                            <constraint firstItem="uv2-Ig-YPf" firstAttribute="top" secondItem="Ten-rm-gjz" secondAttribute="bottom" constant="8" id="uSz-rv-ylg"/>
                             <constraint firstItem="7iu-II-gbY" firstAttribute="top" secondItem="pfQ-cz-Yv1" secondAttribute="bottom" constant="8" id="v6g-eK-Z3l"/>
                             <constraint firstItem="3u0-Vk-6c1" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="vdV-pQ-4DK"/>
                             <constraint firstItem="yJD-6B-p9V" firstAttribute="trailing" secondItem="pfQ-cz-Yv1" secondAttribute="trailing" constant="20" id="wrD-hm-glL"/>
-                            <constraint firstItem="28X-iQ-5I4" firstAttribute="top" secondItem="KLf-El-4d6" secondAttribute="bottom" constant="8" id="xSY-Pi-vKk"/>
-                            <constraint firstItem="28X-iQ-5I4" firstAttribute="centerX" secondItem="7gi-2f-1ZY" secondAttribute="centerX" id="zCo-vJ-Cid"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yJD-6B-p9V"/>
                     </view>
@@ -866,10 +862,9 @@
                         <outlet property="emailAddressTextField" destination="pfQ-cz-Yv1" id="ddZ-zU-kkg"/>
                         <outlet property="passwordTextField" destination="EM2-Fx-VvH" id="xKD-Gr-xOb"/>
                         <outlet property="signUpButton" destination="Ten-rm-gjz" id="ByZ-Qp-bfl"/>
+                        <outlet property="signUpSignInSegmentedControl" destination="uv2-Ig-YPf" id="57h-0U-DdZ"/>
                         <outlet property="stateLabel" destination="Xnt-Cf-I6o" id="AVF-kp-ZAf"/>
                         <outlet property="stateTextField" destination="3u0-Vk-6c1" id="MaS-gc-jN1"/>
-                        <outlet property="switchSignUpSignInLabel" destination="28X-iQ-5I4" id="oP7-Nd-Euv"/>
-                        <outlet property="toggleSignUpSignInSwitch" destination="KLf-El-4d6" id="28z-sL-XDC"/>
                         <outlet property="userNameTextField" destination="zc1-aE-7OL" id="6r4-4j-E6p"/>
                     </connections>
                 </viewController>
