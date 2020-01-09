@@ -11,17 +11,33 @@ import Foundation
 struct DishReview: Codable {
     let id: Int
     let restaurantId: RestaurantId
-    let itemName: ItemName
-    let price: Decimal
-    let rating: Decimal
-    let review: String
+    let dishName: DishName
+    let price: Float
+    let dishRating: DishRating
+    let dishReview: DREview
     
 }
 
-struct ItemName: Codable {
-    let itemName: String
+struct DishName: Codable {
+    let dishName: String
     
     enum CodingKeys: String, CodingKey {
-        case itemName = "item_name"
+        case dishName = "dish_name"
+    }
+}
+
+struct DishRating: Codable {
+    let dishRating: Float
+    
+    enum CodingKeys: String, CodingKey {
+        case dishRating = "dish_rating"
+    }
+}
+
+struct DREview: Codable {
+    let dishReview: String
+    
+    enum CodingKeys: String, CodingKey {
+        case dishReview = "dish_review"
     }
 }

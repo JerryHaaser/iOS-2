@@ -21,10 +21,10 @@ import CoreData
 
 extension DishReview {
     
-    init(id: Int, restaurantId: RestaurantId, itemName: ItemName, price: Decimal, rating: Decimal, review: String) {
+    init(id: Int, restaurantId: RestaurantId, itemName: DishName, price: Decimal, rating: Decimal, review: String) {
         self.id = id
         self.restaurantId = restaurantId
-        self.itemName = itemName
+        self.dishName = itemName
         self.price = price
         self.rating = rating
         self.review = review

@@ -17,6 +17,26 @@ struct Restaurants: Codable {
     let city: String
     let state: String
     let zip: Int
+    var restaurantReview: RestaurantReview?
+    var restaurantRating: RestaurantRating?
+    var visitDate: VisitDate?
+    var dishName: DishName?
+    var price: Float?
+    var dishRating: DishRating?
+    var dishReview: DishReview?
+    
+    enum CodingKeys: String, CodingKey {
+        case userId = "user_id"
+        case restaurantName = "restaurnt_name"
+        case streetAddress = "street_address"
+        case restaurantReview = "restaurant_review"
+        case restaurantRating = "restaurant_rating"
+        case visitDate = "visit_date"
+        case dishName = "dish_name"
+        case dishRating = "dish_rating"
+        case dishReview = "dish_review"
+    }
+    
 }
 
 struct UserId: Codable {

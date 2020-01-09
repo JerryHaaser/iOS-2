@@ -20,7 +20,7 @@ import CoreData
 
 extension RestaurantReview {
     
-    init(id: Int, restaurantId: RestaurantId, visitDate: VisitDate, review: Review, restaurantRating: RestaurantRating) {
+    init(id: Int, restaurantId: RestaurantId, visitDate: VisitDate, review: RestaurantReview, restaurantRating: RestaurantRating) {
         self.id = id
         self.restaurantId = restaurantId
         self.visitDate = visitDate

@@ -41,7 +41,7 @@ struct VisitDate: Codable {
 }
 
 struct RestaurantRating: Codable {
-    let restaurantRating: Decimal
+    let restaurantRating: Float
     
     enum CodingKeys: String, CodingKey {
         case restaurantRating = "restaurant_rating"
