@@ -18,6 +18,9 @@ class AddRestaurantViewController: UIViewController {
     @IBOutlet weak var addRestaurantStateTextField: UITextField!
     @IBOutlet weak var addRestaurantImageView: UIImageView!
     
+    var restaurantController: RestaurantController?
+    var user: User?
+    
 // Not sure what this does, may have to change
     let imageName = "profile.png"
     
@@ -28,6 +31,19 @@ class AddRestaurantViewController: UIViewController {
     }
     
     @IBAction func addRestaurantSaveButtonPressed(_ sender: UIBarButtonItem) {
+        
+        guard let name = addRestaurantNameTextField.text,
+            let cuisine = addRestaurantCuisineTextField.text,
+            let address = addRestaurantStreetAddressTextField.text,
+            let city = addRestaurantCityTextField.text,
+            let state = addRestaurantStateTextField.text else { return }
+        
+//        let dateFormatter = DateFormatter()
+//        let formatedDate = DateFormatter.date
+//        if let date = formatedDate {
+//            restaurantController?.createRestaurant(city, cuisine: cuisine, id: user?.id, restaurantName: name, restaurantRating: <#T##Float#>, restaurantReview: <#T##String#>, state: state, streetAddress: address, userId: user?.id, visitDate: date, zip: zip)
+//        }
+        
     }
     @IBAction func addRestaurantUploadAPhotoButtonPressed(_ sender: UIButton) {
         

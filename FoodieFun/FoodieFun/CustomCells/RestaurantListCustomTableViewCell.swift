@@ -9,6 +9,12 @@
 import UIKit
 
 class RestaurantListCustomTableViewCell: UITableViewCell {
+    
+    var restaurant: Restaurant? {
+        didSet {
+            
+        }
+    }
 
     @IBOutlet weak var restaurantListRestaurantNameLabel: UILabel!
     @IBOutlet weak var restaurantListRatingLabel: UILabel!

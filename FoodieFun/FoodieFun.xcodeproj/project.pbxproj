@@ -24,9 +24,6 @@
 		1C40093423C410C900E2CF31 /* RestaurantReviewCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093323C410C900E2CF31 /* RestaurantReviewCustomTableViewCell.swift */; };
 		1C40093623C4151900E2CF31 /* MenuItemCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093523C4151900E2CF31 /* MenuItemCustomCollectionViewCell.swift */; };
 		1C40093923C41E8C00E2CF31 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093823C41E8C00E2CF31 /* User.swift */; };
-		1C40093B23C41EC100E2CF31 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093A23C41EC100E2CF31 /* Restaurants.swift */; };
-		1C40093D23C41EDB00E2CF31 /* RestaurantReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093C23C41EDB00E2CF31 /* RestaurantReview.swift */; };
-		1C40093F23C41EE900E2CF31 /* DishReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40093E23C41EE900E2CF31 /* DishReview.swift */; };
 		1C40094123C41EF400E2CF31 /* RestaurantPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40094023C41EF400E2CF31 /* RestaurantPhoto.swift */; };
 		1C40094323C41EFD00E2CF31 /* DishImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40094223C41EFD00E2CF31 /* DishImages.swift */; };
 		1C40094523C41FE300E2CF31 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C40094423C41FE300E2CF31 /* UserRepresentation.swift */; };
@@ -88,9 +85,6 @@
 		1C40093323C410C900E2CF31 /* RestaurantReviewCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewCustomTableViewCell.swift; sourceTree = "<group>"; };
 		1C40093523C4151900E2CF31 /* MenuItemCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C40093823C41E8C00E2CF31 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		1C40093A23C41EC100E2CF31 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
-		1C40093C23C41EDB00E2CF31 /* RestaurantReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReview.swift; sourceTree = "<group>"; };
-		1C40093E23C41EE900E2CF31 /* DishReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishReview.swift; sourceTree = "<group>"; };
 		1C40094023C41EF400E2CF31 /* RestaurantPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPhoto.swift; sourceTree = "<group>"; };
 		1C40094223C41EFD00E2CF31 /* DishImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishImages.swift; sourceTree = "<group>"; };
 		1C40094423C41FE300E2CF31 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
@@ -195,11 +189,8 @@
 			children = (
 				1C40093823C41E8C00E2CF31 /* User.swift */,
 				1C40094423C41FE300E2CF31 /* UserRepresentation.swift */,
-				1C40093A23C41EC100E2CF31 /* Restaurants.swift */,
 				1CB4F09523C6B050004476FF /* Restaurant+Convenience.swift */,
-				1C40093C23C41EDB00E2CF31 /* RestaurantReview.swift */,
 				1CB4F09723C6B069004476FF /* RestaurantReview+Convenience.swift */,
-				1C40093E23C41EE900E2CF31 /* DishReview.swift */,
 				1CB4F09923C6B08B004476FF /* DishReview+Convenience.swift */,
 				1C40094023C41EF400E2CF31 /* RestaurantPhoto.swift */,
 				1C40094223C41EFD00E2CF31 /* DishImages.swift */,
@@ -407,7 +398,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C40093B23C41EC100E2CF31 /* Restaurants.swift in Sources */,
 				1CB4F0C323C840EA004476FF /* DishReviewController.swift in Sources */,
 				1C40091E23C3B75C00E2CF31 /* LoginViewController.swift in Sources */,
 				1CB4F09623C6B050004476FF /* Restaurant+Convenience.swift in Sources */,
@@ -418,14 +408,12 @@
 				1C40094723C4EA7000E2CF31 /* Bearer.swift in Sources */,
 				1C40094323C41EFD00E2CF31 /* DishImages.swift in Sources */,
 				1C40092E23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift in Sources */,
-				1C40093D23C41EDB00E2CF31 /* RestaurantReview.swift in Sources */,
 				1CB4F09A23C6B08B004476FF /* DishReview+Convenience.swift in Sources */,
 				1CB4F0BD23C830DA004476FF /* RestaurantReviewRepresentation.swift in Sources */,
 				1C40093423C410C900E2CF31 /* RestaurantReviewCustomTableViewCell.swift in Sources */,
 				1C40093223C40F7600E2CF31 /* RestaurantListCustomTableViewCell.swift in Sources */,
 				1C40092423C3E95500E2CF31 /* TabBarViewController.swift in Sources */,
 				1C40094923C4EB5800E2CF31 /* LoginResponse.swift in Sources */,
-				1C40093F23C41EE900E2CF31 /* DishReview.swift in Sources */,
 				1C40092A23C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift in Sources */,
 				1C40091823C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift in Sources */,
 				1CB4F0B923C81D95004476FF /* Restaurant.xcdatamodeld in Sources */,

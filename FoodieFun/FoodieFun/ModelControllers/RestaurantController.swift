@@ -25,6 +25,8 @@ class RestaurantController {
     var bearer: Bearer?
     var user: User?
     
+    let restaurantReviewController = RestaurantReviewController()
+    
     let baseURL = URL(string: "https://foodie-fun-be.herokuapp.com")
     
     func fetchRestaurantsFromServer(completion: @escaping () -> Void = { }) {
@@ -109,39 +111,12 @@ class RestaurantController {
         
     }
     
-    //        func fetch<T: Codable>(from url: URL, using session: URLSession = URLSession.shared, completion: @escaping (T?, Error?) -> Void) {
-    //
-    //            session.dataTask(with: url) { (data, response, error) in
-    //
-    //                if let response = response as? HTTPURLResponse,
-    //                    response.statusCode != 200 {
-    //                    print(response.statusCode)
-    //                    completion(nil, error)
-    //                    return
-    //                }
-    //
-    //                if let error = error {
-    //                    completion(nil, error)
-    //                    return
-    //                }
-    //
-    //                guard let data = data else {
-    //                    completion(nil, NSError(domain: "com.labmbdaSchool.RandomUser.ErrorDomain", code: -1, userInfo: nil))
-    //                    return
-    //                }
-    //
-    //                do {
-    //                    let jsonDecoder = Restaurants.jsonDecoder
-    //                    let decodedObject = try jsonDecoder.decode(T.self, from: data)
-    //                    completion(decodedObject, nil)
-    //                } catch {
-    //                    completion(nil, error)
-    //                }
-    //            }.resume()
-    //        }
-            
-            
-    
+    func createRestaurant(_ city: String, cuisine: String, id: Int16, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16) {
+        
+        _ = Restaurant(city: city, cuisine: cuisine, id: id, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip, context: CoreDataStack.shared.mainContext)
+        CoreDataStack.shared.save()
+        
+    }
     
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         
@@ -159,8 +134,6 @@ class RestaurantController {
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        
 
         let login = ["username": username, "password": password]
         
@@ -193,12 +166,14 @@ class RestaurantController {
                 self.bearer = bearer
                 
                 let user = User(id: loginResponse.userId,
-                                username: <#T##String#>,
-                                email: <#T##String#>,
+                                username: username,
+                                email: loginResponse.email,
                                 password: password,
-                                city: <#T##String#>,
-                                state: <#T##String#>)
+                                city: loginResponse.city,
+                                state: loginResponse.state)
                 self.user = user
+                
+                self.restaurantReviewController.fetchRestaurantReviewsFromServer()
                 
                 
                 

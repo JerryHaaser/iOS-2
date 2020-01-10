@@ -14,6 +14,14 @@ class RestaurantReviewCustomTableViewCell: UITableViewCell {
     @IBOutlet weak var restaurantReviewCellDateLabel: UILabel!
     @IBOutlet weak var restaurantReviewCellRatingLabel: UILabel!
     
+    var restaurant: Restaurant? {
+        didSet {
+            
+        }
+    }
+    
+//    var restaurantReview = restaurant?.restaurantReview
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

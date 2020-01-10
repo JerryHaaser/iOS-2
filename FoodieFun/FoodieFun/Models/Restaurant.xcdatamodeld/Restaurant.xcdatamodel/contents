@@ -15,11 +15,7 @@
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="cuisine" optional="YES" attributeType="String"/>
-        <attribute name="dishName" optional="YES" attributeType="String"/>
-        <attribute name="dishRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="dishReview" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="restaurantName" optional="YES" attributeType="String"/>
         <attribute name="restaurantRating" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="restaurantReview" optional="YES" attributeType="String"/>
@@ -37,7 +33,7 @@
         <attribute name="visitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="268"/>
+        <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="208"/>
         <element name="RestaurantReview" positionX="-54" positionY="108" width="128" height="118"/>
         <element name="DishReview" positionX="-36" positionY="117" width="128" height="133"/>
         <element name="DishImage" positionX="-18" positionY="126" width="128" height="73"/>

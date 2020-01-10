@@ -14,7 +14,7 @@ protocol TabBarDelegate {
 
 class TabBarViewController: UITabBarController {
     
-    var restaurantsController = RestaurantController()
+    var restaurantController = RestaurantController()
     
     var restaurantListTableVC: RestaurantListTableViewController?
     var userInformationVC: UserInformationViewController?
@@ -28,17 +28,17 @@ class TabBarViewController: UITabBarController {
                 if let navigationVC = vc as? UINavigationController {
                     for vc in navigationVC.viewControllers {
                         if let restaurantListTableVC = vc as? RestaurantListTableViewController {
-                            restaurantListTableVC.restaurantsController = restaurantsController
+                            restaurantListTableVC.restaurantController = restaurantController
                             restaurantListTableVC.delegate = self
                             self.restaurantListTableVC = restaurantListTableVC
                         }
                         
                     }
                 } else if let userInformationVC = vc as? UserInformationViewController {
-                    userInformationVC.restaurantsController = restaurantsController
+                    userInformationVC.restaurantsController = restaurantController
                     self.userInformationVC = userInformationVC
                 } else if let mapKitVC = vc as? MapKitViewController {
-                    mapKitVC.restaurantsController = restaurantsController
+                    mapKitVC.restaurantsController = restaurantController
                     self.mapKitVC = mapKitVC
                 }
             }
@@ -48,7 +48,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if restaurantsController.bearer == nil {
+        if restaurantController.bearer == nil {
             self.performSegue(withIdentifier: "LoginViewControllerModalSegue", sender: self)
         }
     }
@@ -61,7 +61,7 @@ class TabBarViewController: UITabBarController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let loginVC = segue.destination as? LoginViewController {
-            loginVC.restaurantsController = restaurantsController
+            loginVC.restaurantsController = restaurantController
             
             if let restaurantListTableVC = restaurantListTableVC {
                 loginVC.onComplete.append(restaurantListTableVC.tableView.reloadData)
@@ -72,6 +72,8 @@ class TabBarViewController: UITabBarController {
     
 
 }
+
+//MARK: - Add function for calculating overall rating below
 
 extension TabBarViewController: RestaurantListTableViewControllerDelegate {
     

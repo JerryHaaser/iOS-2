@@ -8,46 +8,22 @@
 
 import Foundation
 import CoreData
-//
-//extension Restaurant {
-//    
-//    init(id: Int, userId: String, restaurantName: String, cuisine: String, streetAddress: String, city: String, state: String, zip: Int, restaurantReview: String, restaurantRating: Int, visitDate: Date, dishName: String, price: Float, dishRating: Float, dishReview: String, context: NSManagedObjectContext) {
-//        
-//        self.id = id
-//        self.userId = userId
-//        self.restaurantName = restaurantName
-//        self.cuisine = cuisine
-//        self.streetAddress = streetAddress
-//        self.city = city
-//        self.state = state
-//        self.zip = zip
-//        self.restaurantReview = restaurantReview
-//        self.restaurantRating = restaurantRating
-//        self.visitDate = visitDate
-//        self.dishName = dishName
-//        self.price = price
-//        self.dishRating = dishRating
-//        self.dishReview = dishReview
-//        //self.init(context: context)
-//    }
-//    
-//}
 
 extension Restaurant {
     
     var restaurantRepresentation: RestaurantRepresentation? {
-        return RestaurantRepresentation(city: city, cuisine: cuisine, dishName: dishName, dishRating: dishRating, dishReview: dishReview, id: id, price: price, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip)
+        return RestaurantRepresentation(city: city, cuisine: cuisine, id: id, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip)
     }
     
-    convenience init(city: String, cuisine: String, dishName: String, dishRating: Float, dishReview: String, id: Int16, price: Float, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16, context: NSManagedObjectContext) {
+    convenience init(city: String, cuisine: String, id: Int16, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16, context: NSManagedObjectContext) {
         self.init(context: context)
         self.city = city
         self.cuisine = cuisine
-        self.dishName = dishName
-        self.dishRating = dishRating
-        self.dishReview = dishReview
+//        self.dishName = dishName
+//        self.dishRating = dishRating
+//        self.dishReview = dishReview
         self.id = id
-        self.price = price
+//        self.price = price
         self.restaurantName = restaurantName
         self.restaurantRating = restaurantRating
         self.restaurantReview = restaurantReview
@@ -70,9 +46,9 @@ extension Restaurant {
             case restaurantReview = "restaurant_review"
             case restaurantRating = "restaurant_rating"
             case visitDate = "visit_date"
-            case dishName = "dish_name"
-            case dishRating = "dish_rating"
-            case dishReview = "dish_review"
+//            case dishName = "dish_name"
+//            case dishRating = "dish_rating"
+//            case dishReview = "dish_review"
         }
     
         static var jsonDecoder: JSONDecoder {
@@ -85,20 +61,19 @@ extension Restaurant {
     @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
         self.init(city: restaurantRepresentation.city ?? "",
                   cuisine: restaurantRepresentation.cuisine ?? "",
-                  dishName: restaurantRepresentation.dishName ?? "",
-                  dishRating: restaurantRepresentation.dishRating ?? 0,
-                  dishReview: restaurantRepresentation.dishReview ?? "",
+//                  dishName: restaurantRepresentation.dishName ?? "",
+//                  dishRating: restaurantRepresentation.dishRating ?? 0,
+//                  dishReview: restaurantRepresentation.dishReview ?? "",
                   id: restaurantRepresentation.id ?? 0,
-                  price: restaurantRepresentation.price ?? 0,
+//price: restaurantRepresentation.price ?? 0,
                   restaurantName: restaurantRepresentation.restaurantName ?? "",
                   restaurantRating: restaurantRepresentation.restaurantRating ?? 0,
                   restaurantReview: restaurantRepresentation.restaurantReview ?? "",
                   state: restaurantRepresentation.state ?? "",
                   streetAddress: restaurantRepresentation.streetAddress ?? "",
                   userId: restaurantRepresentation.userId ?? 0,
-                  visitDate: restaurantRepresentation.visitDate ?? Date,
+                  visitDate: (restaurantRepresentation.visitDate ?? nil)!,
                   zip: restaurantRepresentation.zip ?? 0,
                    context: context)
     }
-//
 }

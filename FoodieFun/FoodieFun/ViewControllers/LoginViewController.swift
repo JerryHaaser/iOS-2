@@ -26,15 +26,16 @@ class LoginViewController: UIViewController {
     var onComplete: [( () -> Void )] = []
     
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+        userNameTextField.delegate = self
+        passwordTextField.delegate = self
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//    }
     
     private func updateViews() {
 
@@ -42,7 +43,28 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonePressed(_ sender: UIButton) {
+        guard let username = userNameTextField.text,
+            let password = passwordTextField.text,
+            !username.isEmpty,
+            !password.isEmpty else { return }
         
+        restaurantsController.signIn(username: username, password: password) { error in
+            if error != nil {
+                
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Could not log in", message: "There was an error logging in", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    for callback in self.onComplete {
+                        callback()
+                    }
+                }
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func signUpSignInSegmentedControlTouched(_ sender: UISegmentedControl) {
@@ -82,4 +104,20 @@ class LoginViewController: UIViewController {
     */
 
 }
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTextField {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+            return true
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 

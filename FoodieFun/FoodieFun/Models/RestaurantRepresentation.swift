@@ -12,11 +12,11 @@ struct RestaurantRepresentation: Codable {
     
     var city: String?
     var cuisine: String?
-    var dishName: String?
-    var dishRating: Float?
-    var dishReview: String?
+//    var dishName: String?
+//    var dishRating: Float?
+//    var dishReview: String?
     var id: Int16?
-    var price: Float?
+//    var price: Float?
     var restaurantName: String?
     var restaurantRating: Float?
     var restaurantReview: String?
