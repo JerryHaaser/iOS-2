@@ -58,22 +58,22 @@ extension Restaurant {
         self.zip = zip
     }
     
-    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
-        self.init(city: restaurantRepresentation.city,
-                   cuisine: restaurantRepresentation.cuisine,
-                   dishName: restaurantRepresentation.dishName,
-                   dishRating: restaurantRepresentation.dishRating,
-                   dishReview: restaurantRepresentation.dishReview,
-                   id: restaurantRepresentation.id,
-                   price: restaurantRepresentation.price,
-                   restaurantName: restaurantRepresentation.restaurantName,
-                   restaurantRating: restaurantRepresentation.restaurantRating,
-                   restaurantReview: restaurantRepresentation.restaurantReview,
-                   state: restaurantRepresentation.state,
-                   streetAddress: restaurantRepresentation.streetAddress,
-                   userId: restaurantRepresentation.userId,
-                   visitDate: restaurantRepresentation.visitDate,
-                   zip: restaurantRepresentation.zip)
-    }
-    
+//    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
+//        self.init(city: restaurantRepresentation.city,
+//                   cuisine: restaurantRepresentation.cuisine,
+//                   dishName: restaurantRepresentation.dishName,
+//                   dishRating: restaurantRepresentation.dishRating,
+//                   dishReview: restaurantRepresentation.dishReview,
+//                   id: restaurantRepresentation.id,
+//                   price: restaurantRepresentation.price,
+//                   restaurantName: restaurantRepresentation.restaurantName,
+//                   restaurantRating: restaurantRepresentation.restaurantRating,
+//                   restaurantReview: restaurantRepresentation.restaurantReview,
+//                   state: restaurantRepresentation.state,
+//                   streetAddress: restaurantRepresentation.streetAddress,
+//                   userId: restaurantRepresentation.userId,
+//                   visitDate: restaurantRepresentation.visitDate,
+//                   zip: restaurantRepresentation.zip)
+//    }
+//
 }

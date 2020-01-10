@@ -28,3 +28,18 @@ import CoreData
 //    }
 //    
 //}
+
+extension RestaurantReview {
+    var restaurantReviewRepresentation: RestaurantReviewRepresentation? {
+        return RestaurantReviewRepresentation(id: id, restaurantId: restaurantId, restaurantRating: restaurantRating, review: review, visitDate: visitDate)
+    }
+    
+    convenience init(id: Int16, restaurantId: Int16, restaurantRating: Float, review: String, visitDate: Date, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.id = id
+        self.restaurantId = restaurantId
+        self.restaurantRating = restaurantRating
+        self.review = review
+        self.visitDate = visitDate
+    }
+}

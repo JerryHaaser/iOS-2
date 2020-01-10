@@ -39,3 +39,20 @@ import CoreData
 //    }
 //    
 //}
+
+extension DishReview {
+    var dishReviewRepresentation: DishReviewRepresentation? {
+        return DishReviewRepresentation(dishName: dishName, dishRating: dishRating, dishReview: dishReview, id: id, price: price, restaurantId: restaurantId)
+    }
+    
+    convenience init(dishName: String, dishRating: Float, dishReview: String, id: Int16, price: Float, restaurantId: Int16, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.dishName = dishName
+        self.dishRating = dishRating
+        self.dishReview = dishReview
+        self.id = id
+        self.price = price
+        self.restaurantId = restaurantId
+    }
+    
+}
