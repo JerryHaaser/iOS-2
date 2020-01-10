@@ -49,4 +49,13 @@ extension RestaurantReview {
             case review = "restaurant_review"
             case restaurantRating = "restaurant_rating"
         }
+    
+    @discardableResult convenience init?(restaurantReviewRepresentation: RestaurantReviewRepresentation, context: NSManagedObjectContext) {
+        self.init(id: restaurantReviewRepresentation.id ?? 0,
+                  restaurantId: restaurantReviewRepresentation.restaurantId ?? 0,
+                  restaurantRating: restaurantReviewRepresentation.restaurantRating ?? 0,
+                  review: restaurantReviewRepresentation.review ?? "",
+                  visitDate: restaurantReviewRepresentation.visitDate ?? Date.init(),
+                  context: context)
+    }
 }

@@ -82,22 +82,23 @@ extension Restaurant {
     
         }
     
-//    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
-//        self.init(city: restaurantRepresentation.city,
-//                   cuisine: restaurantRepresentation.cuisine,
-//                   dishName: restaurantRepresentation.dishName,
-//                   dishRating: restaurantRepresentation.dishRating,
-//                   dishReview: restaurantRepresentation.dishReview,
-//                   id: restaurantRepresentation.id,
-//                   price: restaurantRepresentation.price,
-//                   restaurantName: restaurantRepresentation.restaurantName,
-//                   restaurantRating: restaurantRepresentation.restaurantRating,
-//                   restaurantReview: restaurantRepresentation.restaurantReview,
-//                   state: restaurantRepresentation.state,
-//                   streetAddress: restaurantRepresentation.streetAddress,
-//                   userId: restaurantRepresentation.userId,
-//                   visitDate: restaurantRepresentation.visitDate,
-//                   zip: restaurantRepresentation.zip)
-//    }
+    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
+        self.init(city: restaurantRepresentation.city ?? "",
+                  cuisine: restaurantRepresentation.cuisine ?? "",
+                  dishName: restaurantRepresentation.dishName ?? "",
+                  dishRating: restaurantRepresentation.dishRating ?? 0,
+                  dishReview: restaurantRepresentation.dishReview ?? "",
+                  id: restaurantRepresentation.id ?? 0,
+                  price: restaurantRepresentation.price ?? 0,
+                  restaurantName: restaurantRepresentation.restaurantName ?? "",
+                  restaurantRating: restaurantRepresentation.restaurantRating ?? 0,
+                  restaurantReview: restaurantRepresentation.restaurantReview ?? "",
+                  state: restaurantRepresentation.state ?? "",
+                  streetAddress: restaurantRepresentation.streetAddress ?? "",
+                  userId: restaurantRepresentation.userId ?? 0,
+                  visitDate: restaurantRepresentation.visitDate ?? Date,
+                  zip: restaurantRepresentation.zip ?? 0,
+                   context: context)
+    }
 //
 }

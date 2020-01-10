@@ -64,4 +64,14 @@ extension DishReview {
             case dishReview = "dish_review"
         }
     
+    @discardableResult convenience init?(dishReviewRepresentation: DishReviewRepresentation, context: NSManagedObjectContext) {
+        self.init(dishName: dishReviewRepresentation.dishName ?? "",
+                  dishRating: dishReviewRepresentation.dishRating ?? 0,
+                  dishReview: dishReviewRepresentation.dishReview ?? "",
+                  id: dishReviewRepresentation.id ?? 0,
+                  price: dishReviewRepresentation.price ?? 0,
+                  restaurantId: dishReviewRepresentation.restaurantId ?? 0,
+                  context: context)
+    }
+    
 }
