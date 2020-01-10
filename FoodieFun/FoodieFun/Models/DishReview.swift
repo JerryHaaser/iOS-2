@@ -6,38 +6,23 @@
 //  Copyright © 2020 Jerry haaser. All rights reserved.
 //
 
-import Foundation
+//import Foundation
+//
+//struct DishReview: Codable {
+//    let id: Int
+//    let restaurantId: String
+//    let dishName: String
+//    let price: Float
+//    let dishRating: Float
+//    let dishReview: String
+//    
+//    enum CodingKeys: String, CodingKey {
+//        case id = "id"
+//        case restaurantId = "restaurant_id"
+//        case dishName = "dish_name"
+//        case price = "price"
+//        case dishRating = "dish_rating"
+//        case dishReview = "dish_review"
+//    }
+//}
 
-struct DishReview: Codable {
-    let id: Int
-    let restaurantId: RestaurantId
-    let dishName: DishName
-    let price: Float
-    let dishRating: DishRating
-    let dishReview: DREview
-    
-}
-
-struct DishName: Codable {
-    let dishName: String
-    
-    enum CodingKeys: String, CodingKey {
-        case dishName = "dish_name"
-    }
-}
-
-struct DishRating: Codable {
-    let dishRating: Float
-    
-    enum CodingKeys: String, CodingKey {
-        case dishRating = "dish_rating"
-    }
-}
-
-struct DREview: Codable {
-    let dishReview: String
-    
-    enum CodingKeys: String, CodingKey {
-        case dishReview = "dish_review"
-    }
-}

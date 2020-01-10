@@ -10,22 +10,13 @@ import Foundation
 
 struct DishImages: Codable {
     let id: Int
-    let dishId: DishId
-    let dishImageURL: DishImageURL
-}
-
-struct DishId: Codable {
     let dishId: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case dishId = "dish_id"
-    }
-}
-
-struct DishImageURL: Codable {
     let dishImageURL: URL
     
     enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case dishId = "dish_id"
         case dishImageURL = "dish_image_url"
     }
 }
+

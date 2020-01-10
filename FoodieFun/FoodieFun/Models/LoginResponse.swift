@@ -10,5 +10,10 @@ import Foundation
 
 struct LoginResponse: Codable {
     let token: String
-    let userId: UserId
+    let userId: Int
+    
+    enum CodingKeys: String, CodingKey {
+        case token = "token"
+        case userId = "user_id"
+    }
 }

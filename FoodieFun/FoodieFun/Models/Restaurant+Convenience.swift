@@ -8,55 +8,72 @@
 
 import Foundation
 import CoreData
-
-//struct Restaurants: Codable {
-//    let id: Int
-//    let userId: UserId
-//    let restaurantName: RestaurantName
-//    let cuisine: String
-//    let streetAddress: StreetAddress
-//    let city: String
-//    let state: String
-//    let zip: Int
-//    var restaurantReview: RestaurantReview?
-//    var restaurantRating: RestaurantRating?
-//    var visitDate: VisitDate?
-//    var dish_name: DishName?
-//    var price: Float?
-//    var dishRating: DishRating?
-//    var dishReview: DishReview?
 //
+//extension Restaurant {
+//    
+//    init(id: Int, userId: String, restaurantName: String, cuisine: String, streetAddress: String, city: String, state: String, zip: Int, restaurantReview: String, restaurantRating: Int, visitDate: Date, dishName: String, price: Float, dishRating: Float, dishReview: String, context: NSManagedObjectContext) {
+//        
+//        self.id = id
+//        self.userId = userId
+//        self.restaurantName = restaurantName
+//        self.cuisine = cuisine
+//        self.streetAddress = streetAddress
+//        self.city = city
+//        self.state = state
+//        self.zip = zip
+//        self.restaurantReview = restaurantReview
+//        self.restaurantRating = restaurantRating
+//        self.visitDate = visitDate
+//        self.dishName = dishName
+//        self.price = price
+//        self.dishRating = dishRating
+//        self.dishReview = dishReview
+//        //self.init(context: context)
+//    }
+//    
 //}
 
-//(id: Int, userId: UserId, restaurantName: RestaurantName, cuisine: String, streetAddress: StreetAddress, city: String, state: String, zip: Int, restaurantReview: RestaurantReview, restaurantRating: RestaurantRating, visitDate: VisitDate, dishName: DishName, price: Float, dishRating: DishRating, dishReview: DishReview, context: NSManagedObjectContext)
-
-//(id: Int, userId: UserId, restaurantName: RestaurantName, cuisine: String, streetAddress: StreetAddress, city: String, state: String, zip: Int, context: NSManagedObjectContext)
-
-extension Restaurants {
+extension Restaurant {
     
-//    var restaurants: Restaurants? {
-//
-//        return Restaurants(id: id, userId: userId, restaurantName: restaurantName, cuisine: cuisine, streetAddress: streetAddress, city: city, state: state, zip: zip)
-//    }
+    var restaurantRepresentation: RestaurantRepresentation? {
+        return RestaurantRepresentation(city: city, cuisine: cuisine, dishName: dishName, dishRating: dishRating, dishReview: dishReview, id: id, price: price, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip)
+    }
     
-    init(id: Int, userId: UserId, restaurantName: RestaurantName, cuisine: String, streetAddress: StreetAddress, city: String, state: String, zip: Int, restaurantReview: RestaurantReview, restaurantRating: RestaurantRating, visitDate: VisitDate, dishName: DishName, price: Float, dishRating: DishRating, dishReview: DishReview, context: NSManagedObjectContext) {
-        //self.init(context: context)
-        self.id = id
-        self.userId = userId
-        self.restaurantName = restaurantName
-        self.cuisine = cuisine
-        self.streetAddress = streetAddress
+    convenience init(city: String, cuisine: String, dishName: String, dishRating: Float, dishReview: String, id: Int16, price: Float, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16, context: NSManagedObjectContext) {
+        self.init(context: context)
         self.city = city
-        self.state = state
-        self.zip = zip
-        self.restaurantReview = restaurantReview
-        self.restaurantRating = restaurantRating
-        self.visitDate = visitDate
+        self.cuisine = cuisine
         self.dishName = dishName
-        self.price = price
         self.dishRating = dishRating
         self.dishReview = dishReview
-        
+        self.id = id
+        self.price = price
+        self.restaurantName = restaurantName
+        self.restaurantRating = restaurantRating
+        self.restaurantReview = restaurantReview
+        self.state = state
+        self.streetAddress = streetAddress
+        self.userId = userId
+        self.visitDate = visitDate
+        self.zip = zip
+    }
+    
+    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
+        self.init(city: restaurantRepresentation.city,
+                   cuisine: restaurantRepresentation.cuisine,
+                   dishName: restaurantRepresentation.dishName,
+                   dishRating: restaurantRepresentation.dishRating,
+                   dishReview: restaurantRepresentation.dishReview,
+                   id: restaurantRepresentation.id,
+                   price: restaurantRepresentation.price,
+                   restaurantName: restaurantRepresentation.restaurantName,
+                   restaurantRating: restaurantRepresentation.restaurantRating,
+                   restaurantReview: restaurantRepresentation.restaurantReview,
+                   state: restaurantRepresentation.state,
+                   streetAddress: restaurantRepresentation.streetAddress,
+                   userId: restaurantRepresentation.userId,
+                   visitDate: restaurantRepresentation.visitDate,
+                   zip: restaurantRepresentation.zip)
     }
     
 }

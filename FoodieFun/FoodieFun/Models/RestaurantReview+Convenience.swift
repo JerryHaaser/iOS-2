@@ -10,22 +10,21 @@ import Foundation
 import CoreData
 
 //struct RestaurantReview {
-//    let id: Int
-//    let restaurantId: RestaurantId
-//    let visitDate: VisitDate
-//    let review: Review
-//    let restaurantRating: RestaurantRating
+//let id: Int
+//let restaurantId: String
+//let visitDate: Date
+//let review: String
+//let restaurantRating: Float
+
+//
+//extension RestaurantReview {
+//    
+//    convenience init(id: Int16, restaurantId: Int16, visitDate: Date, review: String, restaurantRating: Float) {
+//        self.id = id
+//        self.restaurantId = restaurantId
+//        self.visitDate = visitDate
+//        self.review = review
+//        self.restaurantRating = restaurantRating
+//    }
+//    
 //}
-
-
-extension RestaurantReview {
-    
-    init(id: Int, restaurantId: RestaurantId, visitDate: VisitDate, review: RestaurantReview, restaurantRating: RestaurantRating) {
-        self.id = id
-        self.restaurantId = restaurantId
-        self.visitDate = visitDate
-        self.review = review
-        self.restaurantRating = restaurantRating
-    }
-    
-}
