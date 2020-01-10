@@ -73,7 +73,42 @@ class RestaurantReviewController {
     }
     
     func updateRestaurantReviews(with representations: [RestaurantReviewRepresentation]) {
+        let idsToFetch = representations.map({ $0.restaurantId })
         
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(idsToFetch, representations))
+        
+        var restaurantReviewsToCreate = representationsByID
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            do {
+                let fetchRequest: NSFetchRequest<RestaurantReview> = RestaurantReview.fetchRequest()
+               
+                fetchRequest.predicate = NSPredicate(format: "restaurantId IN @%", idsToFetch)
+                
+                let existingRestaurantReviews = try context.fetch(fetchRequest)
+                
+                for restaurantReview in existingRestaurantReviews {
+                    let id = restaurantReview.id
+                    
+                    guard let representation = representationsByID[id] else { continue }
+                    
+                    restaurantReview.restaurantRating = representation.restaurantRating ?? 0
+                    restaurantReview.review = representation.review ?? ""
+                    restaurantReview.restaurantId = representation.restaurantId ?? 0
+                    
+                    restaurantReviewsToCreate.removeValue(forKey: id)
+                }
+                
+                for representation in restaurantReviewsToCreate.values {
+                    RestaurantReview(restaurantReviewRepresentation: representation, context: context)
+                }
+                CoreDataStack.shared.save(context: context)
+                
+            } catch {
+                NSLog("Error fetching restaurant reviews from persistent store: \(error)")
+            }
+        }
     }
     
 }

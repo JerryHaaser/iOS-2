@@ -18,47 +18,95 @@ enum HTTPMethod: String {
 
 class RestaurantController {
     
+    init() {
+        fetchRestaurantsFromServer()
+    }
+    
     var bearer: Bearer?
     var user: User?
     
     let baseURL = URL(string: "https://foodie-fun-be.herokuapp.com")
     
-    func fetchChoresFromServer(completion: @escaping () -> Void = { }) {
+    func fetchRestaurantsFromServer(completion: @escaping () -> Void = { }) {
         guard let baseURL = baseURL else {
             NSLog("Invalid base URL")
             completion()
             return
         }
         
+        guard let user = user else {
+            return
+        }
+        
         let requestURL = baseURL
             .appendingPathComponent("users")
-            .appendingPathComponent("40")
+            .appendingPathComponent("\(user.id)")
             .appendingPathComponent("restaurants")
         
         let request = URLRequest(url: requestURL)
         
         URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
-                NSLog("Error fetching chores: \(error)")
+                NSLog("Error fetching restaurants: \(error)")
                 completion()
                 return
             }
             
             guard let data = data else {
-                NSLog("No data returned from chore fetch data task")
+                NSLog("No data returned from restaurant fetch data task")
                 completion()
                 return
             }
             
             do {
-                let chores = try JSONDecoder().decode([Restaurants].self, from: data)
-                //self.updateChores(with: chores)
+                let restaurants = try JSONDecoder().decode([RestaurantRepresentation].self, from: data)
+                self.updateRestaurant(with: restaurants)
             } catch {
                 NSLog("Error decoding ChoreRepresentations: \(error)")
             }
             
             completion()
         }.resume()
+    }
+    
+    func updateRestaurant(with representations: [RestaurantRepresentation]) {
+        
+        let idsToFetch = representations.map({ $0.id })
+        
+        let represtationsByID = Dictionary(uniqueKeysWithValues: zip(idsToFetch, representations))
+        
+        var restaurantsToCreate = represtationsByID
+        
+        let context = CoreDataStack.shared.container.newBackgroundContext()
+        
+        context.performAndWait {
+            do {
+                let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+                
+                fetchRequest.predicate = NSPredicate(format: "id IN %@", idsToFetch)
+                
+                let existingRestaurants = try context.fetch(fetchRequest)
+                
+                for restaurant in existingRestaurants {
+                    let id = restaurant.id
+                    
+                    guard let representation = represtationsByID[id] else { continue }
+                    
+                    restaurant.city = representation.city
+                    restaurant.cuisine = representation.cuisine
+                    restaurant.restaurantName = representation.restaurantName
+                    restaurant.restaurantRating = representation.restaurantRating ?? 0
+                    restaurant.restaurantReview = representation.restaurantReview
+                    
+                    restaurantsToCreate.removeValue(forKey: id)
+                }
+                
+                CoreDataStack.shared.save(context: context)
+            } catch {
+                NSLog("Error fetching restaurants from persistent store: \(error)")
+            }
+        }
+        
     }
     
     //        func fetch<T: Codable>(from url: URL, using session: URLSession = URLSession.shared, completion: @escaping (T?, Error?) -> Void) {
