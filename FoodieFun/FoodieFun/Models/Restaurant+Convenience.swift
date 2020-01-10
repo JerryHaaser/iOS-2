@@ -58,6 +58,30 @@ extension Restaurant {
         self.zip = zip
     }
     
+        enum CodingKeys: String, CodingKey {
+            case id = "id"
+            case userId = "user_id"
+            case restaurantName = "restaurnt_name"
+            case cuisine = "cuisine"
+            case streetAddress = "street_address"
+            case city = "city"
+            case state = "state"
+            case zip = "zip"
+            case restaurantReview = "restaurant_review"
+            case restaurantRating = "restaurant_rating"
+            case visitDate = "visit_date"
+            case dishName = "dish_name"
+            case dishRating = "dish_rating"
+            case dishReview = "dish_review"
+        }
+    
+        static var jsonDecoder: JSONDecoder {
+    
+            let result = JSONDecoder()
+            return result
+    
+        }
+    
 //    @discardableResult convenience init?(restaurantRepresentation: RestaurantRepresentation, context: NSManagedObjectContext) {
 //        self.init(city: restaurantRepresentation.city,
 //                   cuisine: restaurantRepresentation.cuisine,

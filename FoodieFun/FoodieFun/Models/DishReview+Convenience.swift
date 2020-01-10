@@ -55,4 +55,13 @@ extension DishReview {
         self.restaurantId = restaurantId
     }
     
+        enum CodingKeys: String, CodingKey {
+            case id = "id"
+            case restaurantId = "restaurant_id"
+            case dishName = "dish_name"
+            case price = "price"
+            case dishRating = "dish_rating"
+            case dishReview = "dish_review"
+        }
+    
 }

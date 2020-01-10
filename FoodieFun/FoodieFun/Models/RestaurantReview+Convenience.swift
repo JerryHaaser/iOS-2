@@ -42,4 +42,11 @@ extension RestaurantReview {
         self.review = review
         self.visitDate = visitDate
     }
+    
+        enum CodingKeys: String, CodingKey {
+            case restaurantId = "restaurant_id"
+            case visitDate = "visit_date"
+            case review = "restaurant_review"
+            case restaurantRating = "restaurant_rating"
+        }
 }
