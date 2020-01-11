@@ -42,7 +42,7 @@ class RestaurantController {
         
         let requestURL = baseURL
             .appendingPathComponent("users")
-            .appendingPathComponent("\(user.id)")
+            .appendingPathComponent("\(user.userId)")
             .appendingPathComponent("restaurants")
         
         let request = URLRequest(url: requestURL)
@@ -129,13 +129,13 @@ class RestaurantController {
         let requestURL = baseURL
         .appendingPathComponent("auth")
         .appendingPathComponent("login")
-        //Not sure these are right ^
+        print(requestURL)
         
         var request = URLRequest(url: requestURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let login = ["username": username, "password": password]
+        let login = ["username": "jerry", "password": "password"]
         
         do {
             let loginJSON = try JSONEncoder().encode(login)
@@ -161,21 +161,17 @@ class RestaurantController {
             
             do {
                 let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+                print(loginResponse)
                 
                 let bearer = Bearer(token: loginResponse.token)
                 self.bearer = bearer
                 
-                let user = User(id: loginResponse.userId,
-                                username: username,
-                                email: loginResponse.email,
-                                password: password,
-                                city: loginResponse.city,
-                                state: loginResponse.state)
+                let user = User(token: loginResponse.token, userId: loginResponse.userId, message: loginResponse.message)
                 self.user = user
-                
+
                 self.restaurantReviewController.fetchRestaurantReviewsFromServer()
-                
-                
+
+
                 
             } catch {
                 NSLog("Error decdoing login response: \(error)")

@@ -41,7 +41,7 @@ class RestaurantReviewController {
         
         let requestURL = baseURL
             .appendingPathComponent("user")
-            .appendingPathComponent("\(user.id)")
+            .appendingPathComponent("\(user.userId)")
             .appendingPathComponent("restaurants")
             .appendingPathComponent("\(restaurant.id)")
             .appendingPathComponent("reviews")

@@ -11,15 +11,12 @@ import Foundation
 struct LoginResponse: Codable {
     let token: String
     let userId: Int
-    let email: String
-    let city: String
-    let state: String
+    let message: String
     
     enum CodingKeys: String, CodingKey {
         case token = "token"
         case userId = "user_id"
-        case email = "email"
-        case city = "city"
-        case state = "state"
+        case message = "message"
+
     }
 }

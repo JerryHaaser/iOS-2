@@ -51,17 +51,18 @@ class LoginViewController: UIViewController {
         restaurantsController.signIn(username: username, password: password) { error in
             if error != nil {
                 
-                DispatchQueue.main.async {
+               // DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Could not log in", message: "There was an error logging in", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
-                }
+                    NSLog("Error sign in did not work: \(error)")
+               // }
             } else {
-                DispatchQueue.main.async {
+                //DispatchQueue.main.async {
                     for callback in self.onComplete {
                         callback()
                     }
-                }
+                //}
                 self.dismiss(animated: true, completion: nil)
             }
         }

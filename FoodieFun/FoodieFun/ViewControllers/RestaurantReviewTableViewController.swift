@@ -45,13 +45,13 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
         return fetchedResultsController.sections?.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+       
         return fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
 
@@ -59,47 +59,34 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewTableViewCell", for: indexPath) as? RestaurantReviewCustomTableViewCell else { return UITableViewCell() }
 
-        cell.restaurant?.restaurantReview = fetchedResultsController.object(at: indexPath)
-
+        
+        let restRev = fetchedResultsController.object(at: indexPath)
+        
+        cell.restaurantReview = restRev
+        
         return cell
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            // Delete the row from the data source
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
+    
     
     // MARK: - Navigation
 
@@ -110,10 +97,14 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
             guard let detailVC = segue.destination as? RestaurantReviewTabBarViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             
+            
+            
             //MARK: Do more to these
             
         } else if segue.identifier == "AddRestaurantReviewShowSegue" {
             guard let detailVC = segue.destination as? AddARestaurantReviewViewController else { return }
+            
+            detailVC.restaurantController = restaurantController
         }
         
     }

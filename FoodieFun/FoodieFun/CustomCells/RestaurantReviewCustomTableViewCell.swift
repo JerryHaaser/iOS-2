@@ -20,6 +20,12 @@ class RestaurantReviewCustomTableViewCell: UITableViewCell {
         }
     }
     
+    var restaurantReview: RestaurantReview? {
+        didSet {
+            
+        }
+    }
+    
 //    var restaurantReview = restaurant?.restaurantReview
     
     
