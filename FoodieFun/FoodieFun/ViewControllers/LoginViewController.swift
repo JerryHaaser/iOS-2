@@ -58,12 +58,13 @@ class LoginViewController: UIViewController {
                     NSLog("Error sign in did not work: \(error)")
                // }
             } else {
-                //DispatchQueue.main.async {
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
                     for callback in self.onComplete {
                         callback()
                     }
-                //}
-                self.dismiss(animated: true, completion: nil)
+                }
+                
             }
         }
     }
