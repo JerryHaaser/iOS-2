@@ -24,6 +24,7 @@ class RestaurantController {
     
     var bearer: Bearer?
     var user: User?
+    var restaurant: Restaurant?
     
     let restaurantReviewController = RestaurantReviewController()
     
@@ -113,10 +114,29 @@ class RestaurantController {
     
     func createRestaurant(_ city: String, cuisine: String, id: Int16, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16) {
         
-        _ = Restaurant(city: city, cuisine: cuisine, id: id, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip, context: CoreDataStack.shared.mainContext)
+        let createdRestaurant = Restaurant(city: city, cuisine: cuisine, id: id, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip, context: CoreDataStack.shared.mainContext)
+        // Changed for networking
+        self.restaurant = createdRestaurant
         CoreDataStack.shared.save()
         
     }
+    
+    func updateRestaurant(updateRestaurant event: Restaurant) {
+        let _ = event
+        deleteClass(forClass: event)
+        CoreDataStack.saveContext()
+    }
+    
+//    func updateIsReserved(forClass eventClass: Restaurant) {
+//        eventClass.isReserved = !eventClass.isReserved
+//        CoreDataStack.saveContext()
+//    }
+    
+    func deleteClass(forClass instructorClass: Restaurant) {
+        CoreDataStack.context.delete(instructorClass)
+        CoreDataStack.saveContext()
+    }
+
     
     func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
         

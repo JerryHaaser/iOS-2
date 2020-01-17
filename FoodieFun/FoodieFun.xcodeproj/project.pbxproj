@@ -151,13 +151,8 @@
 				1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */,
 				1C40092723C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift */,
 				1C40092923C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift */,
-				1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */,
-				1C40091923C3B67200E2CF31 /* RestaurantDetailViewController.swift */,
-				1C40092D23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift */,
-				1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */,
-				1C40091723C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift */,
 				1C40091F23C3B84500E2CF31 /* UserInformationViewController.swift */,
-				1C40092123C3B85400E2CF31 /* MapKitViewController.swift */,
+				1CB4F0D823D18AE9004476FF /* New Group */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -265,6 +260,19 @@
 				1CB4F0B123C6C19B004476FF /* Info.plist */,
 			);
 			path = FoodieFunUnitTests;
+			sourceTree = "<group>";
+		};
+		1CB4F0D823D18AE9004476FF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				1C40092123C3B85400E2CF31 /* MapKitViewController.swift */,
+				1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */,
+				1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */,
+				1C40091923C3B67200E2CF31 /* RestaurantDetailViewController.swift */,
+				1C40092D23C3EB6A00E2CF31 /* RestaurantMenuItemCollectionViewController.swift */,
+				1C40091723C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
