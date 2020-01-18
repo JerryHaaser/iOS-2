@@ -27,7 +27,7 @@ class RestaurantController {
         self.userID = id
     }
     
-    var bearer: BearerToken?
+    var token: BearerToken?
     var user: UserRepresentation?
     var restaurant: RestaurantRepresentation?
     var userID: UserID?
@@ -157,7 +157,7 @@ class RestaurantController {
         }.resume()
     }
     
-    func register(user: User, withPassword password: String, completion: @escaping(NSError?) -> Void = {_ in }) {
+    func register(user: UserRepresentation, withPassword password: String, completion: @escaping(NSError?) -> Void = {_ in }) {
        let registerURL = baseURL?.appendingPathComponent("auth").appendingPathComponent("register")
         guard let registerUrl = registerURL else { return completion(nil) }
         
@@ -189,7 +189,7 @@ class RestaurantController {
             do {
                 let decoder = JSONDecoder()
              print(String(data: data, encoding: .utf8))
-            self.restaurant = try decoder.decode(Restaurant.self, from: data)
+            self.restaurant = try decoder.decode(RestaurantRepresentation.self, from: data)
             } catch let error as NSError {
                 NSLog("failed to decode data: \(error)")
                 completion(error)
@@ -198,7 +198,7 @@ class RestaurantController {
         }.resume()
     }
     
-    func addRestuarant(restaurant: Restaurant, completion: @escaping(NSError?) -> Void = {_ in }) {
+    func addRestuarant(restaurant: RestaurantRepresentation, completion: @escaping(NSError?) -> Void = {_ in }) {
             guard let id = userID else { return }
             let restaurantURL = baseURL?.appendingPathComponent("user").appendingPathComponent("\(id)").appendingPathComponent("restaurants")
             guard let url = restaurantURL else { return }
@@ -232,7 +232,7 @@ class RestaurantController {
                            do {
                                let decoder = JSONDecoder()
                             print(String(data: data, encoding: .utf8))
-                           self.user = try decoder.decode(User.self, from: data)
+                           self.user = try decoder.decode(UserRepresentation.self, from: data)
                            self.token = try decoder.decode(BearerToken.self, from: data)
                            } catch let error as NSError {
                                NSLog("failed to decode data: \(error)")
@@ -242,96 +242,100 @@ class RestaurantController {
             }.resume()
         }
     
-    func createRestaurant(_ city: String, cuisine: String, id: Int16, restaurantName: String, restaurantRating: Float, restaurantReview: String, state: String, streetAddress: String, userId: Int16, visitDate: Date, zip: Int16) {
-        
-        let createdRestaurant = Restaurant(city: city, cuisine: cuisine, id: id, restaurantName: restaurantName, restaurantRating: restaurantRating, restaurantReview: restaurantReview, state: state, streetAddress: streetAddress, userId: userId, visitDate: visitDate, zip: zip, context: CoreDataStack.shared.mainContext)
-        // Changed for networking
-        self.restaurant = createdRestaurant
-        CoreDataStack.shared.save()
+    func addReview(restaurant: RestaurantRepresentation, completion: @escaping(NSError?) -> Void = {_ in }) {
         
     }
     
-    func updateRestaurant(updateRestaurant event: Restaurant) {
-        let _ = event
-        deleteClass(forClass: event)
-        CoreDataStack.saveContext()
-    }
+//    func createRestaurant(_ name: String, cuisine: String, address: String, state: String, city: String, zipcode: String, id: Int) {
+//
+//        let createdRestaurant = RestaurantRepresentation(name: name, cuisine: cuisine, address: address, state: state, city: city, zipcode: zipcode, id: id, context: CoreDataStack.shared.mainContext)
+//        // Changed for networking
+//        self.restaurant = createdRestaurant
+//        CoreDataStack.shared.save()
+//
+//    }
+    
+//    func updateRestaurant(updateRestaurant event: RestaurantRepresentation) {
+//        let _ = event
+//        deleteClass(forClass: event)
+//        CoreDataStack.saveContext()
+//    }
     
 //    func updateIsReserved(forClass eventClass: Restaurant) {
 //        eventClass.isReserved = !eventClass.isReserved
 //        CoreDataStack.saveContext()
 //    }
     
-    func deleteClass(forClass instructorClass: Restaurant) {
-        CoreDataStack.context.delete(instructorClass)
-        CoreDataStack.saveContext()
-    }
+//    func deleteClass(forClass instructorClass: RestaurantRepresentation) {
+//        CoreDataStack.context.delete(instructorClass)
+//        CoreDataStack.saveContext()
+//    }
 
     
-    func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
-        
-        guard let baseURL = baseURL else {
-            NSLog("Invalid base URL")
-            completion(NSError())
-            return
-        }
-        
-        let requestURL = baseURL
-        .appendingPathComponent("auth")
-        .appendingPathComponent("login")
-        print(requestURL)
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.post.rawValue
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let login = ["username": "jerry", "password": "password"]
-        
-        do {
-            let loginJSON = try JSONEncoder().encode(login)
-            request.httpBody = loginJSON
-        } catch {
-            NSLog("Error encoding login data: \(error)")
-            completion(error)
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, _, error in
-            if let error = error {
-                NSLog("Error signing in: \(error)")
-                completion(error)
-                return
-            }
-            
-            guard let data = data else {
-                NSLog("No data return from data task")
-                completion(NSError())
-                return
-            }
-            
-            do {
-                let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
-                print(loginResponse)
-                
-                let bearer = BearerToken(token: loginResponse.token)
-                self.bearer = bearer
-                
-                let user = User(token: loginResponse.token, userId: loginResponse.userId, message: loginResponse.message)
-                self.user = user
-
-                self.restaurantReviewController.fetchRestaurantReviewsFromServer()
-
-
-                
-            } catch {
-                NSLog("Error decdoing login response: \(error)")
-                completion(error)
-                return
-            }
-            
-            completion(nil)
-        }.resume()
-        
-    }
+//    func signIn(username: String, password: String, completion: @escaping (Error?) -> Void) {
+//
+//        guard let baseURL = baseURL else {
+//            NSLog("Invalid base URL")
+//            completion(NSError())
+//            return
+//        }
+//
+//        let requestURL = baseURL
+//        .appendingPathComponent("auth")
+//        .appendingPathComponent("login")
+//        print(requestURL)
+//
+//        var request = URLRequest(url: requestURL)
+//        request.httpMethod = HTTPMethod.post.rawValue
+//        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+//
+//        let login = ["username": "jerry", "password": "password"]
+//
+//        do {
+//            let loginJSON = try JSONEncoder().encode(login)
+//            request.httpBody = loginJSON
+//        } catch {
+//            NSLog("Error encoding login data: \(error)")
+//            completion(error)
+//            return
+//        }
+//
+//        URLSession.shared.dataTask(with: request) { data, _, error in
+//            if let error = error {
+//                NSLog("Error signing in: \(error)")
+//                completion(error)
+//                return
+//            }
+//
+//            guard let data = data else {
+//                NSLog("No data return from data task")
+//                completion(NSError())
+//                return
+//            }
+//
+//            do {
+//                let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+//                print(loginResponse)
+//
+//                let bearer = BearerToken(token: loginResponse.token)
+//                self.token = bearer
+//
+//                let user = UserRepresentation(token: loginResponse.token, userId: loginResponse.userId, message: loginResponse.message)
+//                self.user = user
+//
+//                self.restaurantReviewController.fetchRestaurantReviewsFromServer()
+//
+//
+//
+//            } catch {
+//                NSLog("Error decdoing login response: \(error)")
+//                completion(error)
+//                return
+//            }
+//
+//            completion(nil)
+//        }.resume()
+//
+//    }
     
 }
