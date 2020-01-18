@@ -93,7 +93,7 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "" {
+        if segue.identifier == "ReviewDetailShowSegue" {
             guard let detailVC = segue.destination as? RestaurantReviewTabBarViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
             
@@ -101,7 +101,7 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
             
             //MARK: Do more to these
             
-        } else if segue.identifier == "AddRestaurantReviewShowSegue" {
+        } else if segue.identifier == "AddReviewShowSegue" {
             guard let detailVC = segue.destination as? AddARestaurantReviewViewController else { return }
             
             detailVC.restaurantController = restaurantController
