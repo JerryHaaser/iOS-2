@@ -9,11 +9,25 @@
 import Foundation
 
 struct RestaurantReviewRepresentation: Codable {
-    
-    var id: Int16?
-    var restaurantId: Int16?
-    var restaurantRating: Float?
-    var review: String?
-    var visitDate: Date?
+
+    let id: Int?
+    let title: String?
+    let restaurantReview: String?
+    let rating: String?
+    let date: Date?
+        
+        private enum ResaurantReviewRepresentationCodingKeys: String, CodingKey {
+            case id
+            case title
+            case restaurantReview
+            case rating
+            case date
+
+        }
     
 }
+//var id: Int16?
+//var restaurantId: Int16?
+//var restaurantRating: Float?
+//var review: String?
+//var visitDate: Date?
