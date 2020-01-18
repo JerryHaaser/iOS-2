@@ -36,7 +36,7 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    @IBAction func restaurantReviewTableViewAddButton(_ sender: UIBarButtonItem) {
+    @IBAction func addRestaurantReviewButton(_ sender: UIBarButtonItem) {
         
     }
     

@@ -152,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				1C40091D23C3B75C00E2CF31 /* LoginViewController.swift */,
-				1C40092323C3E95500E2CF31 /* TabBarViewController.swift */,
 				1C40092523C3E98E00E2CF31 /* RestaurantListTableViewController.swift */,
 				1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */,
 				1C40092723C3EA0B00E2CF31 /* RestaurantReviewTableViewController.swift */,
@@ -273,6 +272,7 @@
 		1CB4F0D823D18AE9004476FF /* New Group */ = {
 			isa = PBXGroup;
 			children = (
+				1C40092323C3E95500E2CF31 /* TabBarViewController.swift */,
 				1C40092123C3B85400E2CF31 /* MapKitViewController.swift */,
 				1C40091523C3B5D900E2CF31 /* AddRestaurantItemViewController.swift */,
 				1C40092B23C3EAB800E2CF31 /* RestaurantReviewTabBarViewController.swift */,

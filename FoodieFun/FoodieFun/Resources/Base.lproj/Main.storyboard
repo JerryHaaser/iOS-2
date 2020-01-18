@@ -8,20 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="yIY-kW-rW8">
-            <objects>
-                <tabBarController id="wEB-tB-Sd3" customClass="TabBarViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="doa-X1-of3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ug1-2M-0GT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1849" y="-846"/>
-        </scene>
         <!--Restaurant List Table View Controller-->
         <scene sceneID="j7X-eO-Vu1">
             <objects>
@@ -85,7 +71,7 @@
                                     <outlet property="restaurantListImageView" destination="dR0-Kb-QCt" id="KDr-TS-bYO"/>
                                     <outlet property="restaurantListRatingLabel" destination="Yur-kg-YFe" id="OLv-Ld-aQL"/>
                                     <outlet property="restaurantListRestaurantNameLabel" destination="g7W-fK-6LD" id="hTF-d6-RdW"/>
-                                    <segue destination="Plg-ol-bu2" kind="show" id="pC6-Gu-FeO"/>
+                                    <segue destination="Plg-ol-bu2" kind="show" identifier="AddRestaurantReviewShowSegue" id="pC6-Gu-FeO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,12 +91,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZJ-DB-HcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-610.14492753623188" y="1080.8035714285713"/>
+            <point key="canvasLocation" x="-1186" y="728"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Restaurant Review Table View Controller-->
         <scene sceneID="9DI-Oa-tls">
             <objects>
-                <tableViewController id="Plg-ol-bu2" sceneMemberID="viewController">
+                <tableViewController id="Plg-ol-bu2" customClass="RestaurantReviewTableViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EqV-Hn-nzf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,7 +132,7 @@
                                 <connections>
                                     <outlet property="reviewRatingLabel" destination="6gw-vF-LHt" id="IC7-NN-VYi"/>
                                     <outlet property="reviewTitleLabel" destination="1CZ-En-fZe" id="EZ1-Fo-O96"/>
-                                    <segue destination="Cbf-nJ-Rd2" kind="show" id="L6U-WV-Adw"/>
+                                    <segue destination="Cbf-nJ-Rd2" kind="show" identifier="ReviewDetailShowSegue" id="L6U-WV-Adw"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -158,14 +144,15 @@
                     <navigationItem key="navigationItem" id="XdV-ph-JKh">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MWO-tT-l8F">
                             <connections>
-                                <segue destination="AHC-ZY-2Go" kind="show" id="y1V-Mq-ZfL"/>
+                                <action selector="addRestaurantReviewButton:" destination="Plg-ol-bu2" id="4aM-wT-L7e"/>
+                                <segue destination="AHC-ZY-2Go" kind="show" identifier="AddReviewShowSegue" id="y1V-Mq-ZfL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z2d-64-1qh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461" y="1574"/>
+            <point key="canvasLocation" x="-114" y="1221"/>
         </scene>
         <!--Review Title-->
         <scene sceneID="ctd-YO-w42">
@@ -213,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q9f-rT-OSF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="2005"/>
+            <point key="canvasLocation" x="820" y="1652"/>
         </scene>
         <!--Reviews of Restaurant-->
         <scene sceneID="1n4-nt-yfk">
@@ -946,7 +933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUt-uU-Ya7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2399" y="1081"/>
+            <point key="canvasLocation" x="-2975" y="728"/>
         </scene>
         <!--Add a New Restaurant-->
         <scene sceneID="hjk-mY-6sV">
@@ -1167,7 +1154,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gcp-FQ-LZ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="spc-fx-fnp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="529" y="409"/>
+            <point key="canvasLocation" x="-46" y="56"/>
         </scene>
         <!--Item Name-->
         <scene sceneID="R2c-ga-EwJ">
@@ -1270,20 +1257,6 @@
             </objects>
             <point key="canvasLocation" x="1261" y="4775"/>
         </scene>
-        <!--Tab Bar View Controller-->
-        <scene sceneID="Kpi-Uj-MUS">
-            <objects>
-                <tabBarController id="cyE-19-Brl" customClass="TabBarViewController" customModule="FoodieFun" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WQz-SU-CUx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WaT-o6-VU8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-881" y="-882"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="v4f-aS-zj2">
             <objects>
@@ -1300,7 +1273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6EV-lz-il9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1520.289855072464" y="1080.8035714285713"/>
+            <point key="canvasLocation" x="-2096" y="728"/>
         </scene>
         <!--Add a New Restaurant-->
         <scene sceneID="BSW-AL-xuq">
@@ -1526,7 +1499,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J80-zR-Icp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4xC-Zn-C5h" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="1291"/>
+            <point key="canvasLocation" x="820" y="938"/>
         </scene>
     </scenes>
 </document>

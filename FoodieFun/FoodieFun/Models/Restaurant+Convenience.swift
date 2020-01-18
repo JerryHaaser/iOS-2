@@ -9,6 +9,24 @@
 import Foundation
 import CoreData
 
+
+
+//extension RestaurantRepresentation {
+//
+//    @nonobjc public static func fetchRequest() -> NSFetchRequest<RestaurantRepresentation> {
+//        return NSFetchRequest<RestaurantReview>(entityName: "RestaurantReview")
+//    }
+//
+//    public var name: String
+//    @NSManaged public var cuisine: String
+//    @NSManaged public var address: String
+//    @NSManaged public var state: String
+//    @NSManaged public var city: String
+//    @NSManaged public var zipcode: String
+//    @NSManaged public var id: Int?
+//
+//}
+
 //extension Restaurant {
 //    
 //    var restaurantRepresentation: RestaurantRepresentation? {

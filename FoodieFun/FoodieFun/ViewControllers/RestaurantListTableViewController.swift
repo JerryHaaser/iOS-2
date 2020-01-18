@@ -16,7 +16,7 @@ protocol RestaurantListTableViewControllerDelegate {
 class RestaurantListTableViewController: UITableViewController {
     
     var restaurantController: RestaurantController!
-    var restaurant: Restaurant!
+    var restaurant: RestaurantRepresentation!
     
     var delegate: RestaurantListTableViewControllerDelegate?
     
@@ -41,9 +41,9 @@ class RestaurantListTableViewController: UITableViewController {
         
     }()
     
-    lazy var fetchedResultsController: NSFetchedResultsController<Restaurant> = {
+    lazy var fetchedResultsController: NSFetchedResultsController<RestaurantRepresentation> = {
     
-    let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+    let fetchRequest: NSFetchRequest<RestaurantRepresentation> = RestaurantRepresentation.fetchRequest()
         
         if let assignments = restaurantReviewFRC.fetchedObjects {
             let namesToFetch = assignments.map({ $0.review})
