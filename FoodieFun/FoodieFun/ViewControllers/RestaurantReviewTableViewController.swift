@@ -13,7 +13,7 @@ class RestaurantReviewTableViewController: UITableViewController, NSFetchedResul
     
     var restaurant: Restaurant?
     var restaurantController: RestaurantController?
-    var restaurantReviewControler: RestaurantReviewController?
+   // var restaurantReviewControler: RestaurantReviewController?
     var delegate: RestaurantListTableViewControllerDelegate?
     
     lazy var fetchedResultsController: NSFetchedResultsController<RestaurantReview> = {

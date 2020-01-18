@@ -29,33 +29,34 @@ import CoreData
 //    
 //}
 
-extension RestaurantReview {
-    var restaurantReviewRepresentation: RestaurantReviewRepresentation? {
-        return RestaurantReviewRepresentation(id: id, restaurantId: restaurantId, restaurantRating: restaurantRating, review: review, visitDate: visitDate)
-    }
-    
-    convenience init(id: Int16, restaurantId: Int16, restaurantRating: Float, review: String, visitDate: Date, context: NSManagedObjectContext) {
-        self.init(context: context)
-        self.id = id
-        self.restaurantId = restaurantId
-        self.restaurantRating = restaurantRating
-        self.review = review
-        self.visitDate = visitDate
-    }
-    
-        enum CodingKeys: String, CodingKey {
-            case restaurantId = "restaurant_id"
-            case visitDate = "visit_date"
-            case review = "restaurant_review"
-            case restaurantRating = "restaurant_rating"
-        }
-    
-    @discardableResult convenience init?(restaurantReviewRepresentation: RestaurantReviewRepresentation, context: NSManagedObjectContext) {
-        self.init(id: restaurantReviewRepresentation.id ?? 0,
-                  restaurantId: restaurantReviewRepresentation.restaurantId ?? 0,
-                  restaurantRating: restaurantReviewRepresentation.restaurantRating ?? 0,
-                  review: restaurantReviewRepresentation.review ?? "",
-                  visitDate: restaurantReviewRepresentation.visitDate ?? Date.init(),
-                  context: context)
-    }
-}
+//extension RestaurantReview {
+//    var restaurantReviewRepresentation: RestaurantReviewRepresentation? {
+//        return RestaurantReviewRepresentation(id: id, restaurantId: restaurantId, restaurantRating: restaurantRating, review: review, visitDate: visitDate)
+//    }
+//    
+//    convenience init(id: Int16, restaurantId: Int16, restaurantRating: Float, review: String, visitDate: Date, context: NSManagedObjectContext) {
+//        self.init(context: context)
+//        self.id = id
+//        self.restaurantId = restaurantId
+//        self.restaurantRating = restaurantRating
+//        self.review = review
+//        self.visitDate = visitDate
+//    }
+//    
+//        enum CodingKeys: String, CodingKey {
+//            case restaurantId = "restaurant_id"
+//            case visitDate = "visit_date"
+//            case review = "restaurant_review"
+//            case restaurantRating = "restaurant_rating"
+//        }
+//    
+//    @discardableResult convenience init?(restaurantReviewRepresentation: RestaurantReviewRepresentation, context: NSManagedObjectContext) {
+//        // MARK: this was changed to INT16 to silence error
+//        self.init(id: Int16(restaurantReviewRepresentation.id ?? 0),
+//                  restaurantId: restaurantReviewRepresentation.restaurantId ?? 0,
+//                  restaurantRating: restaurantReviewRepresentation.restaurantRating ?? 0,
+//                  review: restaurantReviewRepresentation.review ?? "",
+//                  visitDate: restaurantReviewRepresentation.visitDate ?? Date.init(),
+//                  context: context)
+//    }
+//}

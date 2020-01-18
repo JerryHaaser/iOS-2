@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signUpSignInSegmentedControl: UISegmentedControl!
     
     var restaurantsController: RestaurantController!
+    var user: UserRepresentation?
     
     var onComplete: [( () -> Void )] = []
     
@@ -48,7 +49,7 @@ class LoginViewController: UIViewController {
             !username.isEmpty,
             !password.isEmpty else { return }
         
-        restaurantsController.signIn(username: username, password: password) { error in
+        restaurantsController.login(withUsername: username, password: password) { error in
             if error != nil {
                 
                // DispatchQueue.main.async {

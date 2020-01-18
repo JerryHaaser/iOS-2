@@ -48,7 +48,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if restaurantController.bearer == nil {
+        if restaurantController.token == nil {
             self.performSegue(withIdentifier: "LoginViewControllerModalSegue", sender: self)
         }
     }

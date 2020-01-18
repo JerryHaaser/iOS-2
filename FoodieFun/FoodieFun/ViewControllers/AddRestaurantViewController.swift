@@ -19,7 +19,7 @@ class AddRestaurantViewController: UIViewController {
     @IBOutlet weak var addRestaurantImageView: UIImageView!
     
     var restaurantController: RestaurantController?
-    var user: User?
+    var user: UserRepresentation?
     
 // Not sure what this does, may have to change
     let imageName = "profile.png"

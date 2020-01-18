@@ -32,7 +32,7 @@ class RestaurantController {
     var restaurant: RestaurantRepresentation?
     var userID: UserID?
     
-    let restaurantReviewController = RestaurantReviewController()
+    //let restaurantReviewController = RestaurantReviewController()
     
     let baseURL = URL(string: "https://foodie-fun-be.herokuapp.com")
     
