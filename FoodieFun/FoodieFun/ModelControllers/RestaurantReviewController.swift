@@ -15,7 +15,7 @@ class RestaurantReviewController {
         fetchRestaurantReviewsFromServer()
     }
     
-    var bearer: Bearer?
+    var bearer: BearerToken?
     var user: User?
     var restaurant: Restaurant?
     

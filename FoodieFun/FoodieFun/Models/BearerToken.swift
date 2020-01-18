@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Bearer: Codable {
+struct BearerToken: Codable {
     let token: String
 }
