@@ -1,5 +1,5 @@
 //
-//  ReviewTableViewCell.swift
+//  RestaurantTableViewCell.swift
 //  FoodieFun
 //
 //  Created by Jerry haaser on 1/19/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class RestaurantTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

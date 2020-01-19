@@ -2,7 +2,6 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="address" optional="YES" attributeType="String"/>
-        <attribute name="attribute" optional="YES"/>
         <attribute name="city" optional="YES" attributeType="String"/>
         <attribute name="cuisine" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -21,7 +20,7 @@
         <attribute name="userName" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Restaurant" positionX="-27" positionY="18" width="128" height="148"/>
+        <element name="Restaurant" positionX="-27" positionY="18" width="128" height="133"/>
         <element name="Review" positionX="18" positionY="108" width="128" height="88"/>
         <element name="User" positionX="54" positionY="144" width="128" height="103"/>
     </elements>

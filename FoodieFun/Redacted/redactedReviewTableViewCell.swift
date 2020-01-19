@@ -2,14 +2,18 @@
 //  ReviewTableViewCell.swift
 //  FoodieFun
 //
-//  Created by Jerry haaser on 1/19/20.
+//  Created by Jerry haaser on 1/18/20.
 //  Copyright © 2020 Jerry haaser. All rights reserved.
 //
 
 import UIKit
 
-class ReviewTableViewCell: UITableViewCell {
+class redactedReviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reviewTitleLabel: UILabel!
+    @IBOutlet weak var reviewRatingLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
