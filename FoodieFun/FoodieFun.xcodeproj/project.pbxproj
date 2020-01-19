@@ -40,7 +40,6 @@
 		1CB4F09A23C6B08B004476FF /* DishReview+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F09923C6B08B004476FF /* DishReview+Convenience.swift */; };
 		1CB4F0A223C6C174004476FF /* FoodieFunUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0A123C6C174004476FF /* FoodieFunUITests.swift */; };
 		1CB4F0B023C6C19B004476FF /* FoodieFunUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0AF23C6C19B004476FF /* FoodieFunUnitTests.swift */; };
-		1CB4F0B923C81D95004476FF /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0B723C81D95004476FF /* Restaurant.xcdatamodeld */; };
 		1CB4F0BB23C82FB0004476FF /* RestaurantRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0BA23C82FB0004476FF /* RestaurantRepresentation.swift */; };
 		1CB4F0BD23C830DA004476FF /* RestaurantReviewRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0BC23C830DA004476FF /* RestaurantReviewRepresentation.swift */; };
 		1CB4F0BF23C8315C004476FF /* DishReviewRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F0BE23C8315C004476FF /* DishReviewRepresentation.swift */; };
@@ -50,6 +49,8 @@
 		1CB4F10A23D297B7004476FF /* UserID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F10923D297B7004476FF /* UserID.swift */; };
 		1CB4F10E23D36582004476FF /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F10D23D36582004476FF /* ReviewTableViewCell.swift */; };
 		1CB4F11123D36942004476FF /* RestaurantReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F11023D36942004476FF /* RestaurantReviewDetailViewController.swift */; };
+		1CB4F11423D4F908004476FF /* FoodieFun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F11223D4F908004476FF /* FoodieFun.xcdatamodeld */; };
+		1CB4F11623D4FAC0004476FF /* ContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F11523D4FAC0004476FF /* ContextExtension.swift */; };
 		1CF4805623C66217004DB7A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4805523C66217004DB7A1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +111,6 @@
 		1CB4F0AD23C6C19B004476FF /* FoodieFunUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodieFunUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CB4F0AF23C6C19B004476FF /* FoodieFunUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieFunUnitTests.swift; sourceTree = "<group>"; };
 		1CB4F0B123C6C19B004476FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CB4F0B823C81D95004476FF /* Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurant.xcdatamodel; sourceTree = "<group>"; };
 		1CB4F0BA23C82FB0004476FF /* RestaurantRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRepresentation.swift; sourceTree = "<group>"; };
 		1CB4F0BC23C830DA004476FF /* RestaurantReviewRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewRepresentation.swift; sourceTree = "<group>"; };
 		1CB4F0BE23C8315C004476FF /* DishReviewRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishReviewRepresentation.swift; sourceTree = "<group>"; };
@@ -120,6 +120,8 @@
 		1CB4F10923D297B7004476FF /* UserID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserID.swift; sourceTree = "<group>"; };
 		1CB4F10D23D36582004476FF /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		1CB4F11023D36942004476FF /* RestaurantReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantReviewDetailViewController.swift; sourceTree = "<group>"; };
+		1CB4F11323D4F908004476FF /* FoodieFun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodieFun.xcdatamodel; sourceTree = "<group>"; };
+		1CB4F11523D4FAC0004476FF /* ContextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextExtension.swift; sourceTree = "<group>"; };
 		1CF4805523C66217004DB7A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				1C40093823C41E8C00E2CF31 /* User.swift */,
+				1CB4F11223D4F908004476FF /* FoodieFun.xcdatamodeld */,
 				1C40094423C41FE300E2CF31 /* UserRepresentation.swift */,
 				1CB4F10923D297B7004476FF /* UserID.swift */,
 				1CB4F0BA23C82FB0004476FF /* RestaurantRepresentation.swift */,
@@ -201,7 +204,7 @@
 				1C40094623C4EA7000E2CF31 /* BearerToken.swift */,
 				1C40094823C4EB5800E2CF31 /* LoginResponse.swift */,
 				1CF4805523C66217004DB7A1 /* CoreDataStack.swift */,
-				1CB4F0B723C81D95004476FF /* Restaurant.xcdatamodeld */,
+				1CB4F11523D4FAC0004476FF /* ContextExtension.swift */,
 				1CB4F0BE23C8315C004476FF /* DishReviewRepresentation.swift */,
 				1CB4F0C023C831DC004476FF /* DishImageRepresentation.swift */,
 			);
@@ -438,10 +441,10 @@
 				1C40093423C410C900E2CF31 /* RestaurantReviewCustomTableViewCell.swift in Sources */,
 				1C40093223C40F7600E2CF31 /* RestaurantListCustomTableViewCell.swift in Sources */,
 				1C40092423C3E95500E2CF31 /* TabBarViewController.swift in Sources */,
+				1CB4F11423D4F908004476FF /* FoodieFun.xcdatamodeld in Sources */,
 				1C40094923C4EB5800E2CF31 /* LoginResponse.swift in Sources */,
 				1C40092A23C3EA6900E2CF31 /* AddARestaurantReviewViewController.swift in Sources */,
 				1C40091823C3B5EF00E2CF31 /* RestaurantItemDetailViewController.swift in Sources */,
-				1CB4F0B923C81D95004476FF /* Restaurant.xcdatamodeld in Sources */,
 				1C40093623C4151900E2CF31 /* MenuItemCustomCollectionViewCell.swift in Sources */,
 				1CB4F0BF23C8315C004476FF /* DishReviewRepresentation.swift in Sources */,
 				1C40091A23C3B67200E2CF31 /* RestaurantDetailViewController.swift in Sources */,
@@ -450,6 +453,7 @@
 				1C40094523C41FE300E2CF31 /* UserRepresentation.swift in Sources */,
 				1C40092023C3B84500E2CF31 /* UserInformationViewController.swift in Sources */,
 				1CB4F10A23D297B7004476FF /* UserID.swift in Sources */,
+				1CB4F11623D4FAC0004476FF /* ContextExtension.swift in Sources */,
 				1CB4F0C523C840FA004476FF /* RestaurantReviewController.swift in Sources */,
 				1CB4F09823C6B069004476FF /* RestaurantReview+Convenience.swift in Sources */,
 				1C8026F223BBDFC70045CBA2 /* AppDelegate.swift in Sources */,
@@ -786,13 +790,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1CB4F0B723C81D95004476FF /* Restaurant.xcdatamodeld */ = {
+		1CB4F11223D4F908004476FF /* FoodieFun.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1CB4F0B823C81D95004476FF /* Restaurant.xcdatamodel */,
+				1CB4F11323D4F908004476FF /* FoodieFun.xcdatamodel */,
 			);
-			currentVersion = 1CB4F0B823C81D95004476FF /* Restaurant.xcdatamodel */;
-			path = Restaurant.xcdatamodeld;
+			currentVersion = 1CB4F11323D4F908004476FF /* FoodieFun.xcdatamodel */;
+			path = FoodieFun.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
