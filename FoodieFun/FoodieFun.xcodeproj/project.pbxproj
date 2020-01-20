@@ -43,6 +43,7 @@
 		1CB4F13C23D50AE8004476FF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F13723D50AE8004476FF /* TabBarViewController.swift */; };
 		1CB4F13E23D50B90004476FF /* UserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F13D23D50B90004476FF /* UserInformationViewController.swift */; };
 		1CB4F14023D50BA5004476FF /* RestaurantListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F13F23D50BA5004476FF /* RestaurantListTableViewController.swift */; };
+		1CB4F14323D61D27004476FF /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4F14223D61D27004476FF /* ReviewDetailViewController.swift */; };
 		1CF4805623C66217004DB7A1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4805523C66217004DB7A1 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,7 @@
 		1CB4F13723D50AE8004476FF /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1CB4F13D23D50B90004476FF /* UserInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformationViewController.swift; sourceTree = "<group>"; };
 		1CB4F13F23D50BA5004476FF /* RestaurantListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantListTableViewController.swift; sourceTree = "<group>"; };
+		1CB4F14223D61D27004476FF /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		1CF4805523C66217004DB7A1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				1C40092523C3E98E00E2CF31 /* RestaurantTableViewController.swift */,
 				1C40090E23C3A72000E2CF31 /* AddRestaurantViewController.swift */,
 				1CB4F11F23D507F7004476FF /* RestaurantsViewController.swift */,
+				1CB4F14223D61D27004476FF /* ReviewDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				1CB4F0C323C840EA004476FF /* DishReviewController.swift in Sources */,
 				1CB4F12B23D50AC4004476FF /* UserID.swift in Sources */,
 				1C40091E23C3B75C00E2CF31 /* LoginViewController.swift in Sources */,
+				1CB4F14323D61D27004476FF /* ReviewDetailViewController.swift in Sources */,
 				1CB4F11823D50446004476FF /* Restaurant.swift in Sources */,
 				1CB4F12423D5087F004476FF /* RestaurantTableViewCell.swift in Sources */,
 				1C40094723C4EA7000E2CF31 /* BearerToken.swift in Sources */,
